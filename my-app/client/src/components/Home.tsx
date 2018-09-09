@@ -1,16 +1,16 @@
 import './Home.css';
 
-import { Grid, Paper } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import DoneIcon from '@material-ui/icons/Done';
 import * as React from 'react';
+import { Button } from 'reactstrap';
 
 import HelloAPI from '../api/HelloAPI';
-import HomeState from './HomeState';
 import logo from './logo.svg';
 
-class Home extends React.Component<any, HomeState> {
+interface IHomeState {
+  response: string;
+}
+
+export default class Home extends React.Component<any, IHomeState> {
 
   constructor(props: any) {
     super(props);
@@ -18,7 +18,7 @@ class Home extends React.Component<any, HomeState> {
       response: ''
     };
   }
-  
+
   public componentDidMount() {
     HelloAPI.callApi()
       .then(res => this.setState({ response: res.express }))
@@ -29,32 +29,28 @@ class Home extends React.Component<any, HomeState> {
     return (
       <div>
 
-        <Paper className="home-featured">
-          <Grid container={true}>
-            <Grid item={true} md={12} style={ {textAlign: "center"} }>
+        <div className="text-center home-featured">
+            <div>
               <img src={logo} className="Home-logo" alt="logo" />
-            </Grid>
-            <Grid item={true} md={12}>
-              <Typography variant="display3" align="center" color="inherit">
+            </div>
+            <div>
+              <h1>
                 Welcome to React
-              </Typography>
-            </Grid>
-          </Grid>
-        </Paper>
+              </h1>
+            </div>
+        </div>
 
-        <Paper style={ {textAlign: "center"} }>
-          <Typography variant="subheading">
+        <div className="text-center">
+          <p>
             {this.state.response}
-          </Typography>
-        </Paper>
-  
-        <Grid container={true} spacing={24} style={ {textAlign: "center"} }>
-          <Grid item={true} xs={12}>
-            <Button variant="contained" color="primary" onClick={this.handleClick}>
-              <DoneIcon /> Button
-            </Button>
-          </Grid>
-        </Grid>
+          </p>
+        </div>
+
+        <div className="text-center">
+          <Button color="primary" onClick={this.handleClick}>
+            Click me
+          </Button>
+        </div>
 
       </div>
     );
@@ -67,5 +63,3 @@ class Home extends React.Component<any, HomeState> {
     });
   };
 }
-
-export default Home;

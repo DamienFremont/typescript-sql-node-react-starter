@@ -176,10 +176,13 @@ You'll find other posts about this starter here (WORK IN PROGRESS)
 # References
 
 * react https://github.com/Microsoft/TypeScript-React-Starter
+
 * express https://esausilva.com/2017/11/14/how-to-use-create-react-app-with-a-node-express-backend-api/
 
-* material https://material-ui.com/getting-started/installation/
-* material typo https://material-ui.com/style/typography/#general
-* material icon https://material.io/tools/icons/?style=baseline
-
 * project structure https://reactjs.org/docs/faq-structure.html
+
+* bootstrap https://reactstrap.github.io
+* bootstrap components https://reactstrap.github.io/components/alerts/
+* bootstrap layout https://reactstrap.github.io/components/layout/
+
+* fontawesome icons https://fontawesome.com/how-to-use/on-the-web/using-with/react
