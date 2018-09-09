@@ -1,3 +1,6 @@
+/!\ WORK IN PROGRESS /!\
+========================
+
 typescript-sql-node-react
 =========================
 
