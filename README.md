@@ -49,7 +49,7 @@ Use it
 
 # Details
 
-You'll find other posts about this starter here:
+You'll find other posts about this starter here (WORK IN PROGRESS)
 
 * packaging
   * versions
@@ -68,6 +68,7 @@ You'll find other posts about this starter here:
 
 * app
   * multilingual-i18n
+  * icons
   * structure
     * package
     * component
@@ -169,5 +170,11 @@ You'll find other posts about this starter here:
 
 # References
 
-* create react https://github.com/Microsoft/TypeScript-React-Starter
-* https://esausilva.com/2017/11/14/how-to-use-create-react-app-with-a-node-express-backend-api/
+* react https://github.com/Microsoft/TypeScript-React-Starter
+* express https://esausilva.com/2017/11/14/how-to-use-create-react-app-with-a-node-express-backend-api/
+
+* material https://material-ui.com/getting-started/installation/
+* material typo https://material-ui.com/style/typography/#general
+* material icon https://material.io/tools/icons/?style=baseline
+
+* project structure https://reactjs.org/docs/faq-structure.html
