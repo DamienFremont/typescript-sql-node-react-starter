@@ -21,19 +21,25 @@ git clone
 cd my-app
 ```
 
-Install
+Execute DEV
+
 ```
 npm install -g create-react-app
 npm install
+npm run dev
 ```
 
-Execute
+Execute PROD
+* linux & mac: `export NODE_ENV=production`
+* windows: `set NODE_ENV=production`
+* win powershell: `$env:NODE_ENV = "production"`
 ```
-set MYWEBAPP_ENV=DEV
+npm install
+npm run heroku-postbuild
 npm start
 ```
 
-Test
+Use it
 * Go to [http://localhost:3000](http://localhost:3000)
 * Login with 'user', 'superuser' or 'admin' (login=password).
 
@@ -42,6 +48,8 @@ Test
 You'll find other posts about this starter here:
 
 * packaging
+  * versions
+    * fixed
   * dev-build
   * prod-build
   * envs
@@ -157,4 +165,5 @@ You'll find other posts about this starter here:
 
 # References
 
-https://github.com/Microsoft/TypeScript-React-Starter
+* create react https://github.com/Microsoft/TypeScript-React-Starter
+* https://esausilva.com/2017/11/14/how-to-use-create-react-app-with-a-node-express-backend-api/
