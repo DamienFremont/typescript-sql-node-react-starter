@@ -7,6 +7,8 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 
 ![alt text](README-tech-architecture.png)
 
+![alt text](README-screenshot.png)
+
 # Stack
 
 * typescript
