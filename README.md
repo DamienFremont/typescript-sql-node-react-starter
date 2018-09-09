@@ -3,6 +3,10 @@ typescript-sql-node-react
 
 This technical stack is not the state-of-the-art, but a stable one (no need to wory for 1-2 years). It's usefull for long-term support apps, like Business or IT Intranet webapps.
 
+![alt text](README-tech-stack.png)
+
+![alt text](README-tech-architecture.png)
+
 # Stack
 
 * typescript
