@@ -1,11 +1,15 @@
 import * as React from 'react';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler } from 'reactstrap';
+import logo from './logo.svg';
 
 interface IAppMenuState {
     isOpen: boolean;
 }
 
-export default class AppToolbar extends React.Component<any, IAppMenuState> {
+/**
+ * @see https://reactstrap.github.io/components/navbar/
+ */
+export default class AppNavbar extends React.Component<any, IAppMenuState> {
 
     constructor(props: any) {
         super(props);
@@ -17,9 +21,9 @@ export default class AppToolbar extends React.Component<any, IAppMenuState> {
 
     public render() {
         return (
-            <div>
-                <Navbar color="light" light expand="md">
+                <Navbar color="dark" dark expand="md">
                     <NavbarBrand>
+                        <img src={logo} width="30" height="30" className="d-inline-block align-top" alt=""/>
                         My-App
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
@@ -29,7 +33,6 @@ export default class AppToolbar extends React.Component<any, IAppMenuState> {
                         </Nav>
                     </Collapse>
                 </Navbar>
-            </div>
         );
     }
 

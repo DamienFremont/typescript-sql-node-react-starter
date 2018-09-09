@@ -3,8 +3,8 @@ import './Home.css';
 import * as React from 'react';
 import { Button } from 'reactstrap';
 
-import HelloAPI from '../api/HelloAPI';
-import logo from './logo.svg';
+import HelloAPI from '../../api/HelloAPI';
+import img from './img.svg';
 
 interface IHomeState {
   response: string;
@@ -29,19 +29,19 @@ export default class Home extends React.Component<any, IHomeState> {
     return (
       <div>
 
-        <div className="text-center home-featured">
+        <div className="jumbotron text-center">
             <div>
-              <img src={logo} className="Home-logo" alt="logo" />
+              <img src={img} className="Home-logo" alt="logo" />
             </div>
             <div>
               <h1>
-                Welcome to React
+                Welcome to My-App
               </h1>
             </div>
         </div>
 
         <div className="text-center">
-          <p>
+          <p className="text-success">
             {this.state.response}
           </p>
         </div>

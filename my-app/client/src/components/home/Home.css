@@ -7,8 +7,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-.home-featured {
-  background-color: grey !important;
-  color: white !important;
-}

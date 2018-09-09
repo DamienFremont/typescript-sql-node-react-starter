@@ -185,4 +185,6 @@ You'll find other posts about this starter here (WORK IN PROGRESS)
 * bootstrap components https://reactstrap.github.io/components/alerts/
 * bootstrap layout https://reactstrap.github.io/components/layout/
 
-* fontawesome icons https://fontawesome.com/how-to-use/on-the-web/using-with/react
+* fontawesome https://fontawesome.com/how-to-use/on-the-web/using-with/react
+* fontawesome config https://github.com/FortAwesome/react-fontawesome
+* fontawesome icons https://fontawesome.com/icons?d=gallery&q=search

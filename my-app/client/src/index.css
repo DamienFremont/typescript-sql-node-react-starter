@@ -3,3 +3,24 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+/* THEME OVERRIDE */
+.bg-dark {
+  background-color: #006ec7 !important;
+  color: #fff !important;
+}
+.bg-light {
+  background-color: #f6f6f7 !important;
+  color: #333 !important;
+}
+
+/* FIXME: This worked for chrome 64 without setting a hard-coded height */
+.height-max {
+  min-height: 90vh !important;
+}
+
+/* FIXME: You can use this css code to get gutterless grid in bootstrap. */
+.container-fluid.no-gutters {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
