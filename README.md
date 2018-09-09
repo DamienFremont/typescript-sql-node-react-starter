@@ -26,15 +26,16 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 
 Get
 ```
-git clone 
-cd my-app
+git clone https://github.com/DamienFremont/typescript-sql-node-react-starter.git
+cd typescript-sql-node-react-starter
 ```
 
 Execute DEV
 
 ```
 npm install -g create-react-app
-npm install
+npm run devinstall
+
 npm run dev
 ```
 
@@ -45,6 +46,7 @@ Execute PROD
 ```
 npm install
 npm run heroku-postbuild
+
 npm start
 ```
 

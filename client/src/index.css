@@ -16,7 +16,7 @@ body {
 
 /* FIXME: This worked for chrome 64 without setting a hard-coded height */
 .height-max {
-  min-height: 90vh !important;
+  min-height: 95vh !important;
 }
 
 /* FIXME: You can use this css code to get gutterless grid in bootstrap. */
