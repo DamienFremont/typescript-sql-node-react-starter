@@ -1,6 +1,7 @@
 import { faPlus, faQuestion, faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Nav, NavLink } from 'reactstrap';
 
 interface IAppSidebarProps {
@@ -34,24 +35,26 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
     return (
       <div className={"bg-light " + this.props.className}>
         <Nav vertical>
-          {this.renderNavLink("Manage people", faSearch, "#")}
-          {this.renderNavLink("Add new person", faPlus, "#")}
+          {this.renderNavLink("nav.peopleSearch", faSearch, "#")}
+          {this.renderNavLink("nav.peopleCreate", faPlus, "#")}
         </Nav>
         <hr />
         <Nav vertical>
-          {this.renderNavLink("Help", faQuestion, "#")}
+          {this.renderNavLink("nav.help", faQuestion, "#")}
         </Nav>
       </div>
     );
   }
 
-  private renderNavLink(label: string, icon: IconDefinition, href: string) {
+  private renderNavLink(messageId: string, icon: IconDefinition, href: string) {
     const { width } = this.state;
     const isMobile = width <= 776;
     return (
       <NavLink disabled href={href}>
         <FontAwesomeIcon icon={icon} />{' '}
-        <span hidden={isMobile}>{label}</span>
+        <span hidden={isMobile}>
+          <FormattedMessage id={messageId} />
+        </span>
       </NavLink>
     );
   }

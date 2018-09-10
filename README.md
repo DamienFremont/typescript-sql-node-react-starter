@@ -14,10 +14,19 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 
 # Stack
 
+
+client
 * typescript
-* material
+* bootstrap
 * react
+  * react-router
+  * redux
+  * react-intl
+* http-client
 * passport
+
+server
+* typescript
 * express
 * swagger
 * sequelize
@@ -190,3 +199,9 @@ You'll find other posts about this starter here (WORK IN PROGRESS)
 * fontawesome https://fontawesome.com/how-to-use/on-the-web/using-with/react
 * fontawesome config https://github.com/FortAwesome/react-fontawesome
 * fontawesome icons https://fontawesome.com/icons?d=gallery&q=search
+
+* Internationalize https://phraseapp.com/blog/posts/react-i18n-best-libraries/
+* Internationalize json import https://hackernoon.com/import-json-into-typescript-8d465beded79
+* Internationalize change language
+
+* file download

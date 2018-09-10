@@ -1,6 +1,7 @@
 import './Home.css';
 
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Button } from 'reactstrap';
 
 import HelloAPI from '../../api/HelloAPI';
@@ -35,7 +36,7 @@ export default class Home extends React.Component<any, IHomeState> {
             </div>
             <div>
               <h1>
-                Welcome to My-App
+                <FormattedMessage id="home.welcome" values={{name: 'My-App'}}/>
               </h1>
             </div>
         </div>
@@ -48,7 +49,7 @@ export default class Home extends React.Component<any, IHomeState> {
 
         <div className="text-center">
           <Button color="primary" onClick={this.handleClick}>
-            Click me
+            <FormattedMessage id="home.button" />
           </Button>
         </div>
 

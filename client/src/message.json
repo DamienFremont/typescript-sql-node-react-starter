@@ -1,0 +1,10 @@
+{
+    "footer.contact": "Contact",
+    "footer.copyright": "Copyright",
+    "footer.help": "Help",
+    "home.button": "Click me",
+    "home.welcome": "Welcome to {name}",
+    "nav.help": "Help",
+    "nav.peopleCreate": "Add new person",
+    "nav.peopleSearch": "Manage people"
+}
