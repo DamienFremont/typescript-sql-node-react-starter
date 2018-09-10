@@ -18,11 +18,11 @@ class App extends React.Component {
         </header>
         <main>
           <Container fluid className="no-gutters">
-            <Row noGutters className="height-max">
-              <Col xs={12} sm="1" md="3" lg="3" xl="2">
-                <AppSidebar />
+            <Row noGutters>
+              <Col xs={2} sm="1" md="1" lg="3" xl="2">
+                <AppSidebar className="sidebar-sticky" />
               </Col>
-              <Col xs={12} sm="11" md="9" lg="9" xl="10">
+              <Col xs={10} sm="11" md="11" lg="9" xl="10">
                 <Home />
                 {this.renderMainFooter()}
               </Col>

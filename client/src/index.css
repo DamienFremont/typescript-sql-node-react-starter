@@ -15,8 +15,10 @@ body {
 }
 
 /* FIXME: This worked for chrome 64 without setting a hard-coded height */
-.height-max {
-  min-height: 95vh !important;
+.sidebar-sticky {
+  /* position: relative; */
+  /* top: 0; */
+  height: calc(100vh - 60px) !important;
 }
 
 /* FIXME: You can use this css code to get gutterless grid in bootstrap. */
