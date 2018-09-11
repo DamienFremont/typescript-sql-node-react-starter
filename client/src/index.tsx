@@ -7,7 +7,7 @@ import * as en from 'react-intl/locale-data/en';
 import * as fr from 'react-intl/locale-data/fr';
 
 import App from './App';
-import * as enMessage from './message.json';
+import * as enMessage from './i18n/translations/en.json';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Import basic support for another locale if needed
