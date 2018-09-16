@@ -11,10 +11,10 @@
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "4.16.3"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4",
-    "concurrently": "^3.5.0"
+    "nodemon": "1.18.4",
+    "concurrently": "3.5.0"
   }
 }
