@@ -35,12 +35,12 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
     return (
       <div className={"bg-light " + this.props.className}>
         <Nav vertical>
-          {this.renderNavLink("nav.peopleSearch", faSearch, "#")}
-          {this.renderNavLink("nav.peopleCreate", faPlus, "#")}
+          {this.renderNavLink("nav.peopleSearch", faSearch, "people/create")}
+          {this.renderNavLink("nav.peopleCreate", faPlus, "/people/create")}
         </Nav>
         <hr />
         <Nav vertical>
-          {this.renderNavLink("nav.help", faQuestion, "#")}
+          {this.renderNavLink("nav.help", faQuestion, "/help")}
         </Nav>
       </div>
     );
@@ -50,7 +50,7 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
     const { width } = this.state;
     const isMobile = width <= 776;
     return (
-      <NavLink disabled href={href}>
+      <NavLink href={href} >
         <FontAwesomeIcon icon={icon} />{' '}
         <span hidden={isMobile}>
           <FormattedMessage id={messageId} />

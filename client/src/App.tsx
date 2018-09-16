@@ -1,48 +1,30 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
 import * as React from 'react';
-import { Col, Container, Row } from 'reactstrap';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import AppFooter from './components/app/AppFooter';
-import AppNavbar from './components/app/AppNavbar';
-import AppSidebar from './components/app/AppSidebar';
-import Home from './components/home/Home';
+import MainLayout from './layouts/MainLayout';
+import About from './pages/About';
+import Help from './pages/Help';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 class App extends React.Component {
 
   public render() {
     return (
-      <React.Fragment>
-        <header>
-          <AppNavbar />
-        </header>
-        <main>
-          <Container fluid className="no-gutters">
-            <Row noGutters>
-              <Col xs={2} sm="1" md="1" lg="3" xl="2">
-                <AppSidebar className="sidebar-sticky" />
-              </Col>
-              <Col xs={10} sm="11" md="11" lg="9" xl="10">
-                <Home />
-                {this.renderMainFooter()}
-              </Col>
-            </Row>
-          </Container>
-        </main>
-        <footer>
-          <AppFooter />
-        </footer>
-      </React.Fragment>
+      <Router>
+        <MainLayout>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/help" component={Help} />
+            <Route exact path="/help/about" component={About} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </MainLayout>
+      </Router>
     );
   }
-
-  // FIXME: This worked for chrome 64 without setting a hard-coded height 
-  private renderMainFooter() {
-    return (
-      <p style={{ marginBottom: "60px" }}>{' '}</p>
-    );
-  }
-
 }
 
 export default App;

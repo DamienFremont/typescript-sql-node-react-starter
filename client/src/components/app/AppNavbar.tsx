@@ -21,18 +21,18 @@ export default class AppNavbar extends React.Component<any, IAppMenuState> {
 
     public render() {
         return (
-                <Navbar color="dark" dark expand="md">
-                    <NavbarBrand>
-                        <img src={logo} width="30" height="30" className="d-inline-block align-top" alt=""/>
-                        My-App
+            <Navbar color="dark" dark expand="md">
+                <NavbarBrand href="/">
+                    <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
+                    My-App
                     </NavbarBrand>
-                    <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <div />
-                        </Nav>
-                    </Collapse>
-                </Navbar>
+                <NavbarToggler onClick={this.toggle} />
+                <Collapse isOpen={this.state.isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <div />
+                    </Nav>
+                </Collapse>
+            </Navbar>
         );
     }
 

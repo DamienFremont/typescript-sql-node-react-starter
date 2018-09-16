@@ -4,8 +4,8 @@ import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Button } from 'reactstrap';
 
-import HelloAPI from '../../api/HelloAPI';
-import img from './img.svg';
+import HelloAPI from '../api/HelloAPI';
+import img from './Home-img.svg';
 
 interface IHomeState {
   response: string;

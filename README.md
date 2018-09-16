@@ -118,25 +118,24 @@ Legend
 | conf-env         | :heavy_check_mark: | NODE-ENV=... |
 | conf-file        | :heavy_check_mark: | dotenv       |
 | conf-placeholder | :heavy_check_mark: | dotenv       |
-| data-dataset     | :x:                |              |
-| data-schema      | :x:                |              |
 
 ## App
 
-| Feature               | State              | Note                         |
-| :-------------------: | -----------------: | ---------------------------: |
-| project-structure     | :heavy_check_mark: | Packages, components, layers |
-| rendering-client-side | :heavy_check_mark: |                              |
-| rendering-server-side | :x:                |                              |
-| rendering-isomorphic  | :x:                |                              |
-| local-message         | :heavy_check_mark: | JSON                         |
-| local-lang-detect     | :heavy_check_mark: | Browser                      |
-| local-lang-change     | :warning:          |                              |
-| icons                 | :heavy_check_mark: | FontAwesome                  |
-| layout-grid           | :heavy_check_mark: |                              |
-| layout-navbar         | :x:                |                              |
-| layout-breadcrumb     | :heavy_check_mark: |                              |
-| layout-help           | :x:                |                              |
+| Feature                 | State              | Note                         |
+| :---------------------: | -----------------: | ---------------------------: |
+| project-structure       | :heavy_check_mark: | components, pages, layouts   |
+| rendering-client-side   | :heavy_check_mark: | SPA                          |
+| rendering-server-side   | :no_entry:         | SSR                          |
+| rendering-universal-app | :no_entry:         | Isomorphic                   |
+| local-message           | :heavy_check_mark: | JSON                         |
+| local-lang-detect       | :heavy_check_mark: | Browser                      |
+| local-lang-change       | :warning:          |                              |
+| icons                   | :heavy_check_mark: | FontAwesome                  |
+| layout-grid             | :heavy_check_mark: |                              |
+| layout-navbar           | :heavy_check_mark: |                              |
+| layout-routes           | :heavy_check_mark: |                              |
+| layout-help             | :x:                | general and pages            |
+| layout-breadcrumb       | :heavy_check_mark: |                              |
 
 ## API
 
@@ -164,6 +163,8 @@ Legend
 | :---------------: | ----: | --------------------: |
 | file-download     | :x:   |                       |
 | file-upload       | :x:   | browse, drop, preview |
+| data-schema       | :x:   |                       |
+| data-dataset      | :x:   |                       |
 | data-orm-crud     | :x:   |                       |
 | data-orm-paginate | :x:   |                       |
 | data-orm-search   | :x:   |                       |
@@ -275,3 +276,5 @@ Legend
 * Internationalize change language
 
 * file download
+
+* sql dump https://stackoverflow.com/questions/36392113/import-sql-dump-within-node-environment
