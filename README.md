@@ -33,6 +33,7 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 | API      | HTTP-client, ExpressJS | Swagger (OpenAPI)               |
 | Data     | Sequelize, SQL         | SQLite, PostGreSQL              |
 | Secu     | Passport               |                                 |
+| Env      | dotenv                 |                                 |
 
 ## Stack view
 
@@ -47,6 +48,7 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 |                  | ExpressJS   | Swagger (OpenAPI)               |
 |                  | Passport    |                                 |
 |                  | Sequelize   |                                 |
+|                  | dotenv      |                                 |
 | Database (dev)   |             |                                 |
 |                  | SQLite      | SQL                             |
 | Database (prod)  |             |                                 |
@@ -114,8 +116,8 @@ Legend
 | build-dev        | :heavy_check_mark: |              |
 | build-prod       | :heavy_check_mark: |              |
 | conf-env         | :heavy_check_mark: | NODE-ENV=... |
-| conf-file        | :x:                |              |
-| conf-placeholder | :x:                |              |
+| conf-file        | :heavy_check_mark: | dotenv       |
+| conf-placeholder | :heavy_check_mark: | dotenv       |
 | data-dataset     | :x:                |              |
 | data-schema      | :x:                |              |
 
