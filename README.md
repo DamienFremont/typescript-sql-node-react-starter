@@ -75,7 +75,7 @@ Use it
   - Go to [http://localhost:3000](http://localhost:3000)
   - Login with 'user', 'superuser' or 'admin' (login=password).
 
-# Details
+# Features
 
 A list of available features divided into tech area. You'll find other posts about this starter here (WORK IN PROGRESS).
 
@@ -104,7 +104,6 @@ Legend
 | conf-env           | :x:                |      |
 | conf-file          | :x:                |      |
 | conf-placeholder   | :x:                |      |
-| data-message-json  | :heavy_check_mark: |      |
 | data-dataset       | :x:                |      |
 | data-schema        | :x:                |      |
 
@@ -116,16 +115,63 @@ Legend
 | rendering-client-side | :heavy_check_mark: |                              |
 | rendering-server-side | :x:                |                              |
 | rendering-isomorphic  | :x:                |                              |
-| local-langa-detect    | :heavy_check_mark: |                              |
-| local-langa-change    | :warning:          |                              |
-| icons                 | :heavy_check_mark: |                              |
+| local-message         | :heavy_check_mark: | JSON                         |
+| local-lang-detect     | :heavy_check_mark: | Browser                      |
+| local-lang-change     | :warning:          |                              |
+| icons                 | :heavy_check_mark: | FontAwesome                  |
 | layout-grid           | :heavy_check_mark: |                              |
 | layout-navbar         | :x:                |                              |
 | layout-breadcrumb     | :heavy_check_mark: |                              |
 | layout-help           | :x:                |                              |
 
+# API
+
+| Feature            | State | Note    |
+| :----------------: | ----: | ------: |
+| api-client         | :x:   |         |
+| api-server         | :x:   | Express |
+| api-swagger        | :x:   | OpenAPI |
+| api-version        | :x:   |         |
+| api-private-public | :x:   |         |
+
+# Service
+
+| Feature                | State | Note               |
+| :--------------------: | ----: | -----------------: |
+| service-store          | :x:   |                    |
+| server-authent         | :x:   |                    |
+| server-security        | :x:   |                    |
+| server-data-validation | :x:   | AJV                |
+| server-local-message   | :x:   | server-side locale |
+
+# Data
+
+| Feature           | State | Note                  |
+| :---------------: | ----: | --------------------: |
+| file-download     | :x:   |                       |
+| file-upload       | :x:   | browse, drop, preview |
+| data-orm-crud     | :x:   |                       |
+| data-orm-paginate | :x:   |                       |
+| data-orm-search   | :x:   |                       |
+
+# Entity
+
+| Feature        | State | Note                                                                   |
+| :------------: | ----: | ---------------------------------------------------------------------: |
+| data-entity    | :x:   | entity, value-object, id, modified-by-at, created-by-at, deleted-by-at |
+| data-reference | :x:   | reference (name, label)                                                |
+| data-history   | :x:   | version, history, event                                                |
+| data-domain    | :x:   | UUID, join models by only one UUID                                     |
+
+# Workflow
+
+| Feature         | State | Note |
+| :-------------: | ----: | ---: |
+| workflow-client | :x:   |      |
+| workflow-server | :x:   |      |
 
 ## Form
+
 | Feature         | State | Note |
 | :-------------: | ----: | ---: |
 | form-edition    | :x:   |      |
@@ -133,8 +179,10 @@ Legend
 | form-exemple    | :x:   |      |
 | form-validation | :x:   |      |
 | date-picker     | :x:   |      |
+| data-validation | :x:   | AJV  |
 
 ## Data-Table  
+
 | Feature          | State | Note |
 | :--------------: | ----: | ---: |
 | table            | :x:   |      |
@@ -146,6 +194,7 @@ Legend
 | table-expand-row | :x:   |      |
 
 ## Security
+
 | Feature     | State | Note |
 | :---------: | ----: | ---: |
 | auth-tocken | :x:   |      |
@@ -155,22 +204,25 @@ Legend
 | secu-page   | :x:   |      |
 | secu-routes | :x:   |      |
 
-## Workflow
-| Feature | State | Note |
-| :-----: | ----: | ---: |
-| front   | :x:   |      |
-| back    | :x:   |      |
+## Tests
 
-* COMING SOON:
+| Feature           | State | Note           |
+| :---------------: | ----: | -------------: |
+| test-unit         | :x:   |                |
+| test-int          | :x:   | integration    |
+| test-ui           | :x:   | user-interface |
+| cucumber-edit     | :x:   | NON-DEV        |
+| cucumber-build    | :x:   |                |
+| cucumber-refactor | :x:   |                |
 
-* file
-  - download
-  - upload
-    - browse
-    - drop
-    - preview
+## Charts
 
-* tools
+- charts
+  - line
+  - bar
+
+## Tools
+
   - VSC
     - settings
     - shortcuts
@@ -180,48 +232,11 @@ Legend
       - Debugger
   - Chromium
     - REST Client
+    - 
+## Other
 
-* model
-  - domain
-    - join
-  - references
-    - code-name
-    - label
-  - entities
-    - id
-    - modified-by-at
-    - created-by-at
-    - deleted-by-at
-  - uuid
-  - history
-    - version
-    - history
-    - event
-
-* API
-  - private-public
-  - version
-  - multilingual-i18n
-  - authent
-  - security
-
-* templating
+- templating
   - Mail
-
-
-* tests
-  - unit
-  - integration
-  - user-interface
-
-* cucumber
-  - Editor NON-DEV
-  - build
-  - refactor
-
-* charts
-  - line
-  - bar
 
 # References
 
