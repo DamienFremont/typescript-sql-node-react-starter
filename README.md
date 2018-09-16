@@ -14,22 +14,34 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 
 # Stack
 
+## Project view
 
-client
-* typescript
-* bootstrap
-* react
-  * react-router
-  * redux
-  * react-intl
-* http-client
-* passport
+| Area     | Product                | Plugins or Impl                 |
+| :------: | ---------------------: | ------------------------------: |
+| Language | TypeScript             |                                 |
+| UI       | Bootstrap              | JQuery                          |
+| App      | ReactJS                | react-router, react-intl, redux |
+| API      | HTTP-client, ExpressJS | Swagger (OpenAPI)               |
+| Data     | Sequelize, SQL         | SQLite, PostGreSQL              |
+| Secu     | Passport               |                                 |
 
-server
-* typescript
-* express
-* swagger
-* sequelize
+## Stack view
+
+| Layer            | Product     | Plugins or Impl                 |
+| :--------------: | ----------: | ------------------------------: |
+| Client (browser) |             |                                 |
+|                  | Bootstrap   | JQuery                          |
+|                  | ReactJS     | react-router, react-intl, redux |
+|                  | HTTP-client | Swagger (OpenAPI)               |
+|                  | Passport    |                                 |
+| Server (NodeJS)  |             |                                 |
+|                  | ExpressJS   | Swagger (OpenAPI)               |
+|                  | Passport    |                                 |
+|                  | Sequelize   |                                 |
+| Database (dev)   |             |                                 |
+|                  | SQLite      | SQL                             |
+| Database (prod)  |             |                                 |
+|                  | PostGreSQL  | SQL                             |
 
 # Usage
 
@@ -49,9 +61,9 @@ npm run dev
 ```
 
 Execute PROD
-* linux & mac: `export NODE_ENV=production`
-* windows: `set NODE_ENV=production`
-* win powershell: `$env:NODE_ENV = "production"`
+  - linux & mac: `export NODE_ENV=production`
+  - windows: `set NODE_ENV=production`
+  - win powershell: `$env:NODE_ENV = "production"`
 ```
 npm install
 npm run heroku-postbuild
@@ -60,140 +72,156 @@ npm start
 ```
 
 Use it
-* Go to [http://localhost:3000](http://localhost:3000)
-* Login with 'user', 'superuser' or 'admin' (login=password).
+  - Go to [http://localhost:3000](http://localhost:3000)
+  - Login with 'user', 'superuser' or 'admin' (login=password).
 
 # Details
 
-You'll find other posts about this starter here (WORK IN PROGRESS).
+A list of available features divided into tech area. You'll find other posts about this starter here (WORK IN PROGRESS).
+
+Legend
+  - :heavy_check_mark:️ - Fully implemented as intended.
+  - :warning: - Partially implemented, somewhat broken or simply still not mature enough.
+  - :x: - Not implemented yet or currently unusable.
+  - :no_entry: ️ - Will not be implemented (see note).
+  - :grey_question: - Not verified or tested.
+
+## Table of Contents
+  - [Packaging](#packaging)
+  - [App](#app)
+  - [Form](#form)
+  - [Data-Table](#data-table)
+  - [Security](#security)
+  - [Workflow](#workflow)
 
 ## Packaging
 
-| Feature            | State              |
-| :----------------: | -----------------: |
-| dependencies-fixed | :x:                |
-| build-dev          | :heavy_check_mark: |
-| build-prod         | :heavy_check_mark: |
-| conf-env           | :x:                |
-| conf-file          | :x:                |
-| conf-placeholder   | :x:                |
-| data-message-json  | :heavy_check_mark: |
-| data-dataset       | :x:                |
-| data-schema        | :x:                |
+| Feature            | State              | Note |
+| :----------------: | -----------------: | ---: |
+| dependencies-fixed | :x:                |      |
+| build-dev          | :heavy_check_mark: |      |
+| build-prod         | :heavy_check_mark: |      |
+| conf-env           | :x:                |      |
+| conf-file          | :x:                |      |
+| conf-placeholder   | :x:                |      |
+| data-message-json  | :heavy_check_mark: |      |
+| data-dataset       | :x:                |      |
+| data-schema        | :x:                |      |
+
 ## App
-| Feature               | State              |
-| :-------------------: | -----------------: |
-| rendering-client-side | :heavy_check_mark: |
-| rendering-server-side | :x:                |
-| rendering-isomorphic  | :x:                |
-| local-langa-detect    | :heavy_check_mark: |
-| local-langa-change    | :x:                |
-| icons                 | :heavy_check_mark: |
+
+| Feature               | State              | Note                         |
+| :-------------------: | -----------------: | ---------------------------: |
+| project-structure     | :heavy_check_mark: | Packages, components, layers |
+| rendering-client-side | :heavy_check_mark: |                              |
+| rendering-server-side | :x:                |                              |
+| rendering-isomorphic  | :x:                |                              |
+| local-langa-detect    | :heavy_check_mark: |                              |
+| local-langa-change    | :warning:          |                              |
+| icons                 | :heavy_check_mark: |                              |
+| layout-grid           | :heavy_check_mark: |                              |
+| layout-navbar         | :x:                |                              |
+| layout-breadcrumb     | :heavy_check_mark: |                              |
+| layout-help           | :x:                |                              |
 
 
-* app :white_large_square:
-  * multilingual-i18n
-    * detect lang :white_check_mark:
-    * change lang :black_medium_square:
-  * icons :white_check_mark:
-  * structure :white_large_square:
-    * package :white_large_square:
-    * component :white_large_square:
-    * layers :white_large_square:
-  * layout
-    * breadcrumb :white_large_square:
-    * navbar :white_check_mark:
-    * help :white_large_square:
+## Form
+| Feature         | State | Note |
+| :-------------: | ----: | ---: |
+| form-edition    | :x:   |      |
+| form-toolbar    | :x:   |      |
+| form-exemple    | :x:   |      |
+| form-validation | :x:   |      |
+| date-picker     | :x:   |      |
 
-* form
-  * edit-toolbar
-  * form-exemple
-  * form-validation
-  * date-picker 
+## Data-Table  
+| Feature          | State | Note |
+| :--------------: | ----: | ---: |
+| table            | :x:   |      |
+| table-modal      | :x:   |      |
+| table-sort       | :x:   |      |
+| table-filtering  | :x:   |      |
+| table-pagination | :x:   |      |
+| table-export     | :x:   |      |
+| table-expand-row | :x:   |      |
 
-* datatable  
-  * table
-  * table-modal     
-  * table-sort
-  * table-filtering
-  * table-pagination
-  * table-export     
-  * table-expand-row
+## Security
+| Feature     | State | Note |
+| :---------: | ----: | ---: |
+| auth-tocken | :x:   |      |
+| auth-oauth2 | :x:   |      |
+| secu-role   | :x:   |      |
+| secu-right  | :x:   |      |
+| secu-page   | :x:   |      |
+| secu-routes | :x:   |      |
 
-* authent
-  * Tocken
-  * OAuth2
-
-* security
-  * role-rights
-  * page
-  * routes
-
-* workflow
-  * front
-  * back
+## Workflow
+| Feature | State | Note |
+| :-----: | ----: | ---: |
+| front   | :x:   |      |
+| back    | :x:   |      |
 
 * COMING SOON:
 
 * file
-  * download
-  * upload
-    * browse
-    * drop
-    * preview
+  - download
+  - upload
+    - browse
+    - drop
+    - preview
 
 * tools
-  * VSC
-    * settings
-    * shortcuts
-    * plugins
-      * TS Hero
-      * TODO
-      * Debugger
-  * Chromium
-    * REST Client
+  - VSC
+    - settings
+    - shortcuts
+    - plugins
+      - TS Hero
+      - TODO
+      - Debugger
+  - Chromium
+    - REST Client
 
 * model
-  * domain
-    * join
-  * references
-    * code-name
-    * label
-  * entities
-    * id
-    * modified-by-at
-    * created-by-at
-    * deleted-by-at
-  * uuid
-  * history
-    * version
-    * history
-    * event
+  - domain
+    - join
+  - references
+    - code-name
+    - label
+  - entities
+    - id
+    - modified-by-at
+    - created-by-at
+    - deleted-by-at
+  - uuid
+  - history
+    - version
+    - history
+    - event
 
 * API
-  * private-public
-  * version
-  * multilingual-i18n
-  * authent
-  * security
+  - private-public
+  - version
+  - multilingual-i18n
+  - authent
+  - security
 
 * templating
-  * Mail
+  - Mail
 
 
 * tests
-  * unit
-  * integration
-  * user-interface
+  - unit
+  - integration
+  - user-interface
 
 * cucumber
-  * Editor NON-DEV
-  * build
-  * refactor
+  - Editor NON-DEV
+  - build
+  - refactor
 
 * charts
-  * line
-  * bar
+  - line
+  - bar
 
 # References
 
