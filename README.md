@@ -67,13 +67,18 @@ Use it
 
 You'll find other posts about this starter here (WORK IN PROGRESS)
 
-| Domain    | Feature      | State                |
-| --------- | :----------: | -------------------: |
-| `packaging` | dependencies-fixed | :white_large_square: |
-| packaging | dev-build | :white_check_mark: |
-| packaging | prod-build | :white_check_mark: |
-| packaging | envs-properties | :white_large_square: |
-| packaging | envs-properties-placeholder | :white_large_square: |
+| Domain      | Feature              | State                |
+| ----------- | :------------------: | -------------------: |
+| `packaging` | dependencies-fixed   | :white_large_square: |
+| `packaging` | build-dev            | :heavy_check_mark:   |
+| `packaging` | build-prod           | :heavy_check_mark:   |
+| `packaging` | conf-env             | :white_large_square: |
+| `packaging` | conf-file            | :white_large_square: |
+| `packaging` | conf-placeholder     | :white_large_square: |
+| `packaging` | dataset-sql          | :white_large_square: |
+| `packaging` | rendering-client     | :heavy_check_mark:   |
+| `packaging` | rendering-server     | :white_large_square: |
+| `packaging` | rendering-isomorphic | :white_large_square: |
 
 * packaging :white_large_square:
   * dependencies
@@ -82,7 +87,7 @@ You'll find other posts about this starter here (WORK IN PROGRESS)
   * prod-build :white_check_mark:
   * envs
     * properties :white_large_square:
-  * dataset :✔️
+  * dataset :white_large_square:
     * sql :white_large_square:
     * message :white_large_square:
   * rendering
