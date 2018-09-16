@@ -98,7 +98,7 @@ Legend
 
 | Feature            | State              | Note |
 | :----------------: | -----------------: | ---: |
-| dependencies-fixed | :heavy_check_mark: |      |
+| dependencies-fixed | :x:                |      |
 | build-dev          | :heavy_check_mark: |      |
 | build-prod         | :heavy_check_mark: |      |
 | conf-env           | :x:                |      |
