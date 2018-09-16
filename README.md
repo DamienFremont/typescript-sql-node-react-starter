@@ -4,13 +4,22 @@
 typescript-sql-node-react
 =========================
 
-This technical stack is not the state-of-the-art, but a stable one (no need to wory for 1-2 years). It's usefull for long-term support apps, like Business or IT Intranet webapps.
+This technical stack is not the state-of-the-art, but a stable one (no need to wory for 3-5 years). It's usefull for long-term support apps, like Business or IT Intranet webapps.
 
-![alt text](README-tech-stack.png)
+![alt text](docs/README-tech-stack.png)
 
-![alt text](README-tech-architecture.png)
+![alt text](docs/README-tech-architecture.png)
 
-![alt text](README-screenshot.png)
+![alt text](docs/README-screenshot.png)
+
+# Table of Contents
+- [Introduction](#typescript-sql-node-react)
+- [Stack](#stack)
+- [Usage](#usage)
+- [Features](#features)
+- [References](#references)
+
+---
 
 # Stack
 
@@ -43,6 +52,8 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 | Database (prod)  |             |                                 |
 |                  | PostGreSQL  | SQL                             |
 
+---
+
 # Usage
 
 Get
@@ -74,6 +85,8 @@ npm start
 Use it
   - Go to [http://localhost:3000](http://localhost:3000)
   - Login with 'user', 'superuser' or 'admin' (login=password).
+  - 
+---
 
 # Features
 
@@ -96,16 +109,15 @@ Legend
 
 ## Packaging
 
-| Feature            | State              | Note |
-| :----------------: | -----------------: | ---: |
-| dependencies-fixed | :x:                |      |
-| build-dev          | :heavy_check_mark: |      |
-| build-prod         | :heavy_check_mark: |      |
-| conf-env           | :x:                |      |
-| conf-file          | :x:                |      |
-| conf-placeholder   | :x:                |      |
-| data-dataset       | :x:                |      |
-| data-schema        | :x:                |      |
+| Feature          | State              | Note         |
+| :--------------: | -----------------: | -----------: |
+| build-dev        | :heavy_check_mark: |              |
+| build-prod       | :heavy_check_mark: |              |
+| conf-env         | :heavy_check_mark: | NODE-ENV=... |
+| conf-file        | :x:                |              |
+| conf-placeholder | :x:                |              |
+| data-dataset     | :x:                |              |
+| data-schema      | :x:                |              |
 
 ## App
 
@@ -124,7 +136,7 @@ Legend
 | layout-breadcrumb     | :heavy_check_mark: |                              |
 | layout-help           | :x:                |                              |
 
-# API
+## API
 
 | Feature            | State | Note    |
 | :----------------: | ----: | ------: |
@@ -134,7 +146,7 @@ Legend
 | api-version        | :x:   |         |
 | api-private-public | :x:   |         |
 
-# Service
+## Service
 
 | Feature                | State | Note               |
 | :--------------------: | ----: | -----------------: |
@@ -144,7 +156,7 @@ Legend
 | server-data-validation | :x:   | AJV                |
 | server-local-message   | :x:   | server-side locale |
 
-# Data
+## Data
 
 | Feature           | State | Note                  |
 | :---------------: | ----: | --------------------: |
@@ -154,7 +166,7 @@ Legend
 | data-orm-paginate | :x:   |                       |
 | data-orm-search   | :x:   |                       |
 
-# Entity
+## Entity
 
 | Feature        | State | Note                                                                   |
 | :------------: | ----: | ---------------------------------------------------------------------: |
@@ -163,7 +175,7 @@ Legend
 | data-history   | :x:   | version, history, event                                                |
 | data-domain    | :x:   | UUID, join models by only one UUID                                     |
 
-# Workflow
+## Workflow
 
 | Feature         | State | Note |
 | :-------------: | ----: | ---: |
@@ -237,6 +249,8 @@ Legend
 
 - templating
   - Mail
+
+---
 
 # References
 
