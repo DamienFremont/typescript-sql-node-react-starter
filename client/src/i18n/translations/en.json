@@ -1,10 +1,22 @@
 {
+    "app.title": "My-App",
     "footer.contact": "Contact",
     "footer.copyright": "Copyright",
     "footer.help": "Help",
+    "nav.help": "Help",
+    "nav.about": "Manage people",
+    "nav.peopleCreate": "Add new person",
+    "nav.peopleSearch": "Manage people",
     "home.button": "Click me",
     "home.welcome": "Welcome to {name}",
-    "nav.help": "Help",
-    "nav.peopleCreate": "Add new person",
-    "nav.peopleSearch": "Manage people"
+    "about.title": "About",
+    "about.version": "Version",
+    "about.gethelp": "Get help with {name}",
+    "about.reportissue": "Report an issue",
+    "about.copyright": "Copyright 2018 My-Company  Inc. All rights reserved.",
+    "about.terms": "Terms of Service",
+    "help.title": "Help",
+    "help.tableofcontent": "Table of Content",
+    "help.home.title": "Home",
+    "help.home.desc": "Home page is the app's entry-point."
 }

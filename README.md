@@ -134,7 +134,7 @@ Legend
 | layout-grid             | :heavy_check_mark: |                              |
 | layout-navbar           | :heavy_check_mark: |                              |
 | layout-routes           | :heavy_check_mark: |                              |
-| layout-help             | :x:                | general and pages            |
+| layout-help             | :heavy_check_mark: | general and pages            |
 | layout-breadcrumb       | :heavy_check_mark: |                              |
 
 ## API

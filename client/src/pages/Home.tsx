@@ -1,5 +1,7 @@
 import './Home.css';
 
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Button } from 'reactstrap';
@@ -36,7 +38,7 @@ export default class Home extends React.Component<any, IHomeState> {
             </div>
             <div>
               <h1>
-                <FormattedMessage id="home.welcome" values={{name: 'My-App'}}/>
+                <FormattedMessage id="home.welcome" values={{ name : "My-App"}}/>
               </h1>
             </div>
         </div>
@@ -52,7 +54,9 @@ export default class Home extends React.Component<any, IHomeState> {
             <FormattedMessage id="home.button" />
           </Button>
         </div>
-
+        <Button color="link" href="/help#home">
+          <FontAwesomeIcon icon={faQuestionCircle} />
+        </Button>
       </div>
     );
   }

@@ -1,10 +1,22 @@
 {
+    "app.title": "My-App",
     "footer.contact": "Contact",
     "footer.copyright": "Mentions légales",
     "footer.help": "Aide",
+    "nav.help": "Aide",
+    "nav.about": "À propos",
+    "nav.peopleCreate": "Ajouter une personne",
+    "nav.peopleSearch": "Gérer les personnes",
     "home.button": "Cliquer ici",
     "home.welcome": "Bienvenue sur {name}",
-    "nav.help": "Aide",
-    "nav.peopleCreate": "Ajouter une personne",
-    "nav.peopleSearch": "Gérer les personnes"
+    "about.title": "À propos",
+    "about.version": "Version",
+    "about.gethelp": "Get help with {name}",
+    "about.reportissue": "Report an issue",
+    "about.copyright": "Copyright 2018 My-Company Inc. All rights reserved.",
+    "about.terms": "Terms of Service",
+    "help.title": "Aide",
+    "help.tableofcontent": "Table of Content",
+    "help.home.title": "Accueil",
+    "help.home.desc": "La page 'Accueil' est le point d'entrée de l'application."
 }

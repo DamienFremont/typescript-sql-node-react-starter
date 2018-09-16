@@ -7,13 +7,17 @@ import AppFooter from '../components/app/AppFooter';
 import AppNavbar from '../components/app/AppNavbar';
 import AppSidebar from '../components/app/AppSidebar';
 
-export default class MainLayout extends React.Component {
+interface IMainLayoutProps {
+  logo: any;
+}
+
+export default class MainLayout extends React.Component<IMainLayoutProps, any> {
 
   public render() {
     return (
       <div>
         <header>
-          <AppNavbar />
+          <AppNavbar logo={this.props.logo}/>
         </header>
         <main>
           <Container fluid className="no-gutters">

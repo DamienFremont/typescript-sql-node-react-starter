@@ -4,6 +4,7 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import MainLayout from './layouts/MainLayout';
+import logo from './logo.svg';
 import About from './pages/About';
 import Help from './pages/Help';
 import Home from './pages/Home';
@@ -14,7 +15,7 @@ class App extends React.Component {
   public render() {
     return (
       <Router>
-        <MainLayout>
+        <MainLayout logo={logo}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/help" component={Help} />

@@ -1,4 +1,4 @@
-import { faPlus, faQuestion, faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faInfo, faPlus, faQuestion, faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -24,9 +24,7 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
   public componentWillMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
-  
-  // make sure to remove the listener
-  // when the component is not mounted anymore
+
   public componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
@@ -41,6 +39,7 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
         <hr />
         <Nav vertical>
           {this.renderNavLink("nav.help", faQuestion, "/help")}
+          {this.renderNavLink("nav.about", faInfo, "/help/about")}
         </Nav>
       </div>
     );
@@ -51,7 +50,7 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
     const isMobile = width <= 776;
     return (
       <NavLink href={href} >
-        <FontAwesomeIcon icon={icon} />{' '}
+        <FontAwesomeIcon icon={icon} fixedWidth />{' '}
         <span hidden={isMobile}>
           <FormattedMessage id={messageId} />
         </span>
