@@ -67,18 +67,18 @@ Use it
 
 You'll find other posts about this starter here (WORK IN PROGRESS)
 
-* packaging
+* packaging :white_check_mark:
   * versions
     * fixed
-  * dev-build
-  * prod-build
+  * dev-build :white_check_mark:
+  * prod-build :white_check_mark:
   * envs
-    * properties
+    * properties :red_circle:
   * dataset
-    * sql
-    * message
+    * sql :white_large_square:
+    * message :white_medium_square:
   * rendering
-    * client-side
+    * client-side :white_check_mark:
     * server-side
     * isomorphic
 
