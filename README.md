@@ -67,32 +67,37 @@ Use it
 
 You'll find other posts about this starter here (WORK IN PROGRESS)
 
+| Status   |      Are      |  Cool |
+|----------|:-------------:|------:|
+
 * packaging :white_check_mark:
-  * versions
-    * fixed
+  * dependencies
+    * fixed :white_large_square:
   * dev-build :white_check_mark:
   * prod-build :white_check_mark:
   * envs
-    * properties :red_circle:
+    * properties :white_large_square:
   * dataset
     * sql :white_large_square:
-    * message :white_medium_square:
+    * message :white_large_square:
   * rendering
     * client-side :white_check_mark:
-    * server-side
-    * isomorphic
+    * server-side :white_large_square:
+    * isomorphic :white_large_square:
 
-* app
+* app :white_check_mark:
   * multilingual-i18n
-  * icons
-  * structure
-    * package
-    * component
-    * layers
+    * detect lang :large_blue_circle:
+    * change lang :red_circle:
+  * icons :large_blue_circle:
+  * structure :white_circle:
+    * package :white_circle:
+    * component :white_circle:
+    * layers :white_circle:
   * layout
-    * breadcrumb
-    * navbar
-    * help
+    * breadcrumb :white_circle:
+    * navbar :large_blue_circle:
+    * help :white_circle:
 
 * form
   * edit-toolbar
