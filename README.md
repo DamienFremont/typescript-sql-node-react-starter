@@ -65,35 +65,31 @@ Use it
 
 # Details
 
-You'll find other posts about this starter here (WORK IN PROGRESS)
+You'll find other posts about this starter here (WORK IN PROGRESS).
 
-| Domain      | Feature              | State                |
-| ----------- | :------------------: | -------------------: |
-| `packaging` | dependencies-fixed   | :white_large_square: |
-| `packaging` | build-dev            | :heavy_check_mark:   |
-| `packaging` | build-prod           | :heavy_check_mark:   |
-| `packaging` | conf-env             | :white_large_square: |
-| `packaging` | conf-file            | :white_large_square: |
-| `packaging` | conf-placeholder     | :white_large_square: |
-| `packaging` | dataset-sql          | :white_large_square: |
-| `packaging` | rendering-client     | :heavy_check_mark:   |
-| `packaging` | rendering-server     | :white_large_square: |
-| `packaging` | rendering-isomorphic | :white_large_square: |
+## Packaging
 
-* packaging :white_large_square:
-  * dependencies
-    * fixed :white_large_square:
-  * dev-build :white_check_mark:
-  * prod-build :white_check_mark:
-  * envs
-    * properties :white_large_square:
-  * dataset :white_large_square:
-    * sql :white_large_square:
-    * message :white_large_square:
-  * rendering
-    * client-side :white_check_mark:
-    * server-side :white_large_square:
-    * isomorphic :white_large_square:
+| Feature            | State              |
+| :----------------: | -----------------: |
+| dependencies-fixed | :x:                |
+| build-dev          | :heavy_check_mark: |
+| build-prod         | :heavy_check_mark: |
+| conf-env           | :x:                |
+| conf-file          | :x:                |
+| conf-placeholder   | :x:                |
+| data-message-json  | :heavy_check_mark: |
+| data-dataset       | :x:                |
+| data-schema        | :x:                |
+## App
+| Feature               | State              |
+| :-------------------: | -----------------: |
+| rendering-client-side | :heavy_check_mark: |
+| rendering-server-side | :x:                |
+| rendering-isomorphic  | :x:                |
+| local-langa-detect    | :heavy_check_mark: |
+| local-langa-change    | :x:                |
+| icons                 | :heavy_check_mark: |
+
 
 * app :white_large_square:
   * multilingual-i18n
