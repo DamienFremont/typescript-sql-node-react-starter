@@ -67,17 +67,22 @@ Use it
 
 You'll find other posts about this starter here (WORK IN PROGRESS)
 
-| Status   |      Are      |  Cool |
-|----------|:-------------:|------:|
+| Domain    | Feature      | State                |
+| --------- | :----------: | -------------------: |
+| `packaging` | dependencies-fixed | :white_large_square: |
+| packaging | dev-build | :white_check_mark: |
+| packaging | prod-build | :white_check_mark: |
+| packaging | envs-properties | :white_large_square: |
+| packaging | envs-properties-placeholder | :white_large_square: |
 
-* packaging :white_check_mark:
+* packaging :white_large_square:
   * dependencies
     * fixed :white_large_square:
   * dev-build :white_check_mark:
   * prod-build :white_check_mark:
   * envs
     * properties :white_large_square:
-  * dataset
+  * dataset :✔️
     * sql :white_large_square:
     * message :white_large_square:
   * rendering
@@ -85,19 +90,19 @@ You'll find other posts about this starter here (WORK IN PROGRESS)
     * server-side :white_large_square:
     * isomorphic :white_large_square:
 
-* app :white_check_mark:
+* app :white_large_square:
   * multilingual-i18n
-    * detect lang :large_blue_circle:
-    * change lang :red_circle:
-  * icons :large_blue_circle:
-  * structure :white_circle:
-    * package :white_circle:
-    * component :white_circle:
-    * layers :white_circle:
+    * detect lang :white_check_mark:
+    * change lang :black_medium_square:
+  * icons :white_check_mark:
+  * structure :white_large_square:
+    * package :white_large_square:
+    * component :white_large_square:
+    * layers :white_large_square:
   * layout
-    * breadcrumb :white_circle:
-    * navbar :large_blue_circle:
-    * help :white_circle:
+    * breadcrumb :white_large_square:
+    * navbar :white_check_mark:
+    * help :white_large_square:
 
 * form
   * edit-toolbar
