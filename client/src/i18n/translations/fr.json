@@ -17,6 +17,8 @@
     "about.terms": "Terms of Service",
     "help.title": "Aide",
     "help.tableofcontent": "Table of Content",
-    "help.home.title": "Accueil",
-    "help.home.desc": "La page 'Accueil' est le point d'entrée de l'application."
+    "help.getstarted.title": "Get started",
+    "help.getstarted.desc": "La page 'Accueil' est le point d'entrée de l'application.",
+    "help.fixproblems.title": "Fix Problems",
+    "help.fixproblems.desc": "Report an issue"
 }

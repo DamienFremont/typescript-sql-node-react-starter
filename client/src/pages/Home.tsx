@@ -54,7 +54,7 @@ export default class Home extends React.Component<any, IHomeState> {
             <FormattedMessage id="home.button" />
           </Button>
         </div>
-        <Button color="link" href="/help#home">
+        <Button color="link" href="/help#getstarted">
           <FontAwesomeIcon icon={faQuestionCircle} />
         </Button>
       </div>

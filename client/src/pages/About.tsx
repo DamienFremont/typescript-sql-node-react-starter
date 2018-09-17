@@ -5,10 +5,11 @@ import { FormattedMessage } from 'react-intl';
 import { Button, ListGroup, ListGroupItem } from 'reactstrap';
 import Container from 'reactstrap/lib/Container';
 
-// TODO: move logo
+import packageJson from '../../package.json';
 import logo from '../logo.svg';
 
-export default class About extends React.Component<any, any> {
+// TODO: move logo
+export default class About extends React.Component {
 
   constructor(props: any) {
     super(props);
@@ -27,9 +28,13 @@ export default class About extends React.Component<any, any> {
         <ListGroup>
           <ListGroupItem>
             {logo ?
-              <img src={logo} width="40" height="40" className="d-inline-block align-top" alt="" />
+              <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
               : null}
             <FormattedMessage id="app.title" />
+          </ListGroupItem>
+          <ListGroupItem>
+            <FormattedMessage id="about.version" /> {' '}
+            {packageJson.version}
           </ListGroupItem>
           <ListGroupItem>
             <FormattedMessage id="about.gethelp" values={{ name: "My-App" }} />

@@ -4,7 +4,7 @@
     "footer.copyright": "Copyright",
     "footer.help": "Help",
     "nav.help": "Help",
-    "nav.about": "Manage people",
+    "nav.about": "About",
     "nav.peopleCreate": "Add new person",
     "nav.peopleSearch": "Manage people",
     "home.button": "Click me",
@@ -17,6 +17,8 @@
     "about.terms": "Terms of Service",
     "help.title": "Help",
     "help.tableofcontent": "Table of Content",
-    "help.home.title": "Home",
-    "help.home.desc": "Home page is the app's entry-point."
+    "help.getstarted.title": "Get started",
+    "help.getstarted.desc": "Home page is the app's entry-point.",
+    "help.fixproblems.title": "Fix Problems",
+    "help.fixproblems.desc": "Report an issue"
 }

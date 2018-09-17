@@ -6,14 +6,16 @@ import { Button, Collapse, Container } from 'reactstrap';
 import ListGroup from 'reactstrap/lib/ListGroup';
 import ListGroupItem from 'reactstrap/lib/ListGroupItem';
 
-import HomeHelp from '../components/Help/HomeHelp';
+import FixProblemsHelp from '../components/Help/FixProblemsHelp';
+import GetStartedHelp from '../components/Help/GetStartedHelp';
 
 export default class Help extends React.Component<any, any> {
 
   constructor(props: any) {
     super(props);
-    this.toggleHome = this.toggleHome.bind(this);
-    this.state = { isOpenHome: this.props.location.hash === '#home' };
+    this.toggleGetstarted = this.toggleGetstarted.bind(this);
+    this.toggleFixproblems = this.toggleFixproblems.bind(this);
+    this.state = this.initState();
   }
 
   public render() {
@@ -25,23 +27,55 @@ export default class Help extends React.Component<any, any> {
         </div>
         <Container>
           <ListGroup>
-            <ListGroupItem id="home">
-              <Button color="link" href="/help#home" onClick={this.toggleHome}>
-                <FormattedMessage id="help.home.title" />
+
+            <ListGroupItem id="getstarted">
+              <Button color="link" href="/help#getstarted" onClick={this.toggleGetstarted}>
+                <FormattedMessage id="help.getstarted.title" />
               </Button>
             </ListGroupItem>
-            <Collapse isOpen={this.state.isOpenHome}>
+            <Collapse isOpen={this.state.open === '#getstarted'}>
               <ListGroupItem>
-                <HomeHelp />
+                <GetStartedHelp />
               </ListGroupItem>
             </Collapse>
+
+            <ListGroupItem id="fixproblems">
+              <Button color="link" href="/help#fixproblems" onClick={this.toggleFixproblems}>
+                <FormattedMessage id="help.fixproblems.title" />
+              </Button>
+            </ListGroupItem>
+            <Collapse isOpen={this.state.open === '#fixproblems'}>
+              <ListGroupItem>
+                <FixProblemsHelp />
+              </ListGroupItem>
+            </Collapse>
+
           </ListGroup>
         </Container>
       </div>
     );
   }
 
-  private toggleHome() {
-    this.setState({ isOpenHome: !this.state.isOpenHome });
+  private toggleGetstarted() {
+    this.setState({
+      open: '#getstarted'
+    });
+  }
+
+  private toggleFixproblems() {
+    this.setState({
+      open: '#fixproblems'
+    });
+  }
+
+  private initState(): any {
+    if (!this.props.location.hash) {
+      return {
+        open: '#getstarted'
+      };
+    }
+    return {
+      open: this.props.location.hash
+    };
   }
 }
