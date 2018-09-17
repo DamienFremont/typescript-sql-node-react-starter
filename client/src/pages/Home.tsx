@@ -3,7 +3,7 @@ import './Home.css';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import * as intl from 'react-intl-universal';
 import { Button } from 'reactstrap';
 
 import HelloAPI from '../api/HelloAPI';
@@ -37,9 +37,7 @@ export default class Home extends React.Component<any, IHomeState> {
               <img src={img} className="Home-logo" alt="logo" />
             </div>
             <div>
-              <h1>
-                <FormattedMessage id="home.welcome" values={{ appname: <FormattedMessage id="app.title" />}}/>
-              </h1>
+              <h1>{intl.get('home.welcome', { appname: intl.get('app.title') })}</h1>
             </div>
         </div>
 
@@ -51,7 +49,7 @@ export default class Home extends React.Component<any, IHomeState> {
 
         <div className="text-center">
           <Button color="primary" onClick={this.handleClick}>
-            <FormattedMessage id="home.button" />
+            {intl.get('home.button')}
           </Button>
         </div>
         <Button color="link" href="/help#getstarted">

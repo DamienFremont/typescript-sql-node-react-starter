@@ -1,7 +1,7 @@
-import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import * as intl from 'react-intl-universal';
 import { Breadcrumb, BreadcrumbItem, Button, Collapse, Container } from 'reactstrap';
 import ListGroup from 'reactstrap/lib/ListGroup';
 import ListGroupItem from 'reactstrap/lib/ListGroupItem';
@@ -22,20 +22,20 @@ export default class Help extends React.Component<any, any> {
     return (
       <div>
         <Breadcrumb>
-          <BreadcrumbItem><a href="/"><FormattedMessage id="breadcrumb.home" /></a></BreadcrumbItem>
-          <BreadcrumbItem active><FormattedMessage id="breadcrumb.help" /></BreadcrumbItem>
+          <BreadcrumbItem><a href="/">{intl.get('breadcrumb.home')}</a></BreadcrumbItem>
+          <BreadcrumbItem active>{intl.get('breadcrumb.help')}</BreadcrumbItem>
         </Breadcrumb>
         
-        <div className="text-center">
-          <div> <FontAwesomeIcon icon={faQuestion} size="lg" />{' '}  </div>
-          <h1> <FormattedMessage id="help.title" /></h1>
+        <div className="mt-5 mb-5 text-center">
+          <div> <FontAwesomeIcon icon={faQuestionCircle} size="lg" />{' '}  </div>
+          <h1> {intl.get('help.title')}</h1>
         </div>
         <Container>
           <ListGroup>
 
             <ListGroupItem id="getstarted">
               <Button color="link" href="/help#getstarted" onClick={this.toggleGetstarted}>
-                <FormattedMessage id="help.getstarted.title" values={{ appname: <FormattedMessage id="app.title" /> }} />
+                {intl.get('help.getstarted.title', { appname: intl.get('app.title') })}
               </Button>
             </ListGroupItem>
             <Collapse isOpen={this.state.open === '#getstarted'}>
@@ -46,7 +46,7 @@ export default class Help extends React.Component<any, any> {
 
             <ListGroupItem id="fixproblems">
               <Button color="link" href="/help#fixproblems" onClick={this.toggleFixproblems}>
-                <FormattedMessage id="help.fixproblems.title" />
+                {intl.get('help.fixproblems.title')}
               </Button>
             </ListGroupItem>
             <Collapse isOpen={this.state.open === '#fixproblems'}>

@@ -1,7 +1,7 @@
 import { faInfo, faPlus, faQuestion, faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import * as intl from 'react-intl-universal';
 import { Nav, NavLink } from 'reactstrap';
 
 interface IAppSidebarProps {
@@ -52,7 +52,7 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
       <NavLink href={href} >
         <FontAwesomeIcon icon={icon} fixedWidth />{' '}
         <span hidden={isMobile}>
-          <FormattedMessage id={messageId} />
+          {intl.get(messageId)}
         </span>
       </NavLink>
     );

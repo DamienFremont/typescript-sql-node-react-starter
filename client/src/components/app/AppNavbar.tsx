@@ -1,6 +1,9 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import * as intl from 'react-intl-universal';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler } from 'reactstrap';
+
+import App from '../../App';
+import AppLocaleSelector from './AppLocaleSelector';
 
 
 interface IAppNavbarState {
@@ -30,15 +33,15 @@ export default class AppNavbar extends React.Component<IAppNavbarProps, IAppNavb
         return (
             <Navbar color="dark" dark expand="md">
                 <NavbarBrand href="/">
-                    {logo?
+                    {logo ?
                         <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
-                    :null}
-                    <FormattedMessage id="app.title" />
-                    </NavbarBrand>
+                        : null}
+                    {intl.get('app.title')}
+                </NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        <div />
+                        <AppLocaleSelector locales={App.LOCALES} />
                     </Nav>
                 </Collapse>
             </Navbar>

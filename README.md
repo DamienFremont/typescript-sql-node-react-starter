@@ -129,13 +129,14 @@ Legend
 | rendering-universal-app | :no_entry:         | Isomorphic                 |
 | local-message           | :heavy_check_mark: | JSON                       |
 | local-lang-detect       | :heavy_check_mark: | Browser                    |
-| local-lang-change       | :warning:          |                            |
+| local-lang-change       | :heavy_check_mark: |                            |
 | icons                   | :heavy_check_mark: | FontAwesome                |
 | layout-grid             | :heavy_check_mark: |                            |
 | layout-navbar           | :heavy_check_mark: |                            |
 | layout-routes           | :heavy_check_mark: |                            |
 | layout-help             | :heavy_check_mark: | general and pages          |
 | layout-breadcrumb       | :heavy_check_mark: |                            |
+| layout-urls             | :x:                | SSR and CSR                |
 
 ## Security
 

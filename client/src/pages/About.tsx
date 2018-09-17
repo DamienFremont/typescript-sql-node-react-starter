@@ -1,7 +1,7 @@
 import { faFileContract, faFileSignature, faShareSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import * as intl from 'react-intl-universal';
 import { Breadcrumb, BreadcrumbItem, Button, ListGroup, ListGroupItem } from 'reactstrap';
 import Container from 'reactstrap/lib/Container';
 
@@ -22,14 +22,14 @@ export default class About extends React.Component {
     return (
       <div>
         <Breadcrumb>
-          <BreadcrumbItem><a href="/"><FormattedMessage id="breadcrumb.home" /></a></BreadcrumbItem>
-          <BreadcrumbItem><a href="/help"><FormattedMessage id="breadcrumb.help" /></a></BreadcrumbItem>
-          <BreadcrumbItem active><FormattedMessage id="breadcrumb.about" /></BreadcrumbItem>
+          <BreadcrumbItem><a href="/">{intl.get('breadcrumb.home')}</a></BreadcrumbItem>
+          <BreadcrumbItem><a href="/help">{intl.get('breadcrumb.help')}</a></BreadcrumbItem>
+          <BreadcrumbItem active>{intl.get('breadcrumb.about')}</BreadcrumbItem>
         </Breadcrumb>
 
         <Container>
           <p>
-            <FormattedMessage id="about.title" />
+            {intl.get('about.title')}
           </p>
 
           <ListGroup>
@@ -37,20 +37,20 @@ export default class About extends React.Component {
               {logo ?
                 <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
                 : null}
-              <FormattedMessage id="app.title" />
+              {intl.get('app.title')}
             </ListGroupItem>
             <ListGroupItem>
-              <FormattedMessage id="about.version" /> {' '}
+              {intl.get('about.version')} {' '}
               {packageJson.version}
             </ListGroupItem>
             <ListGroupItem>
-              <FormattedMessage id="about.gethelp" values={{ appname: <FormattedMessage id="app.title" /> }} />
+              {intl.get('about.gethelp', { appname: intl.get('app.title') })}
               <Button color="link" href="/help" >
                 <FontAwesomeIcon icon={faShareSquare} fixedWidth />{' '}
               </Button >
             </ListGroupItem>
             <ListGroupItem>
-              <FormattedMessage id="about.reportissue" />
+              {intl.get('about.reportissue')}
               <Button color="link" href="/contact" >
                 <FontAwesomeIcon icon={faFileSignature} fixedWidth />{' '}
               </Button>
@@ -61,9 +61,9 @@ export default class About extends React.Component {
 
           <ListGroup>
             <ListGroupItem>
-              <p><FormattedMessage id="app.title" /></p>
-              <p><FormattedMessage id="about.copyright" /></p>
-              <p><FormattedMessage id="about.terms" />
+              <p>{intl.get('app.title')}</p>
+              <p>{intl.get('about.copyright')}</p>
+              <p>{intl.get('about.terms')}
                 <Button color="link" href="/terms" >
                   <FontAwesomeIcon icon={faFileContract} fixedWidth />{' '}
                 </Button >
