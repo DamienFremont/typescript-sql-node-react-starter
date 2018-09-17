@@ -27,7 +27,7 @@ export default class Help extends React.Component<any, any> {
         </Breadcrumb>
         
         <div className="mt-5 mb-5 text-center">
-          <div> <FontAwesomeIcon icon={faQuestionCircle} size="lg" />{' '}  </div>
+          <div> <FontAwesomeIcon icon={faQuestionCircle} size="4x" />{' '}  </div>
           <h1> {intl.get('help.title')}</h1>
         </div>
         <Container>

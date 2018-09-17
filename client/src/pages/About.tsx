@@ -62,7 +62,7 @@ export default class About extends React.Component {
           <ListGroup>
             <ListGroupItem>
               <p>{intl.get('app.title')}</p>
-              <p>{intl.get('about.copyright')}</p>
+              <p>{intl.get('about.copyright', { company: intl.get('app.company') })}</p>
               <p>{intl.get('about.terms')}
                 <Button color="link" href="/terms" >
                   <FontAwesomeIcon icon={faFileContract} fixedWidth />{' '}
