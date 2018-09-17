@@ -2,7 +2,7 @@ import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Button, Collapse, Container } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Button, Collapse, Container } from 'reactstrap';
 import ListGroup from 'reactstrap/lib/ListGroup';
 import ListGroupItem from 'reactstrap/lib/ListGroupItem';
 
@@ -21,7 +21,12 @@ export default class Help extends React.Component<any, any> {
   public render() {
     return (
       <div>
-        <div className="jumbotron text-center">
+        <Breadcrumb>
+          <BreadcrumbItem><a href="/"><FormattedMessage id="breadcrumb.home" /></a></BreadcrumbItem>
+          <BreadcrumbItem active><FormattedMessage id="breadcrumb.help" /></BreadcrumbItem>
+        </Breadcrumb>
+        
+        <div className="text-center">
           <div> <FontAwesomeIcon icon={faQuestion} size="lg" />{' '}  </div>
           <h1> <FormattedMessage id="help.title" /></h1>
         </div>
@@ -30,7 +35,7 @@ export default class Help extends React.Component<any, any> {
 
             <ListGroupItem id="getstarted">
               <Button color="link" href="/help#getstarted" onClick={this.toggleGetstarted}>
-                <FormattedMessage id="help.getstarted.title" />
+                <FormattedMessage id="help.getstarted.title" values={{ appname: <FormattedMessage id="app.title" /> }} />
               </Button>
             </ListGroupItem>
             <Collapse isOpen={this.state.open === '#getstarted'}>

@@ -11,7 +11,7 @@ export default class FixProblemsHelp extends React.Component {
             <div>
                 <h2><FormattedMessage id="help.fixproblems.title" /></h2>
                 <p>
-                    <FormattedMessage id="help.fixproblems.desc" />
+                    <FormattedMessage id="help.fixproblems.desc" values={{ appname: <FormattedMessage id="app.title" /> }} />
                     <Button color="link" href="/contact" >
                         <FontAwesomeIcon icon={faFileSignature} fixedWidth />{' '}
                     </Button>

@@ -121,21 +121,34 @@ Legend
 
 ## App
 
-| Feature                 | State              | Note                         |
-| :---------------------: | -----------------: | ---------------------------: |
-| project-structure       | :heavy_check_mark: | components, pages, layouts   |
-| rendering-client-side   | :heavy_check_mark: | SPA                          |
-| rendering-server-side   | :no_entry:         | SSR                          |
-| rendering-universal-app | :no_entry:         | Isomorphic                   |
-| local-message           | :heavy_check_mark: | JSON                         |
-| local-lang-detect       | :heavy_check_mark: | Browser                      |
-| local-lang-change       | :warning:          |                              |
-| icons                   | :heavy_check_mark: | FontAwesome                  |
-| layout-grid             | :heavy_check_mark: |                              |
-| layout-navbar           | :heavy_check_mark: |                              |
-| layout-routes           | :heavy_check_mark: |                              |
-| layout-help             | :heavy_check_mark: | general and pages            |
-| layout-breadcrumb       | :heavy_check_mark: |                              |
+| Feature                 | State              | Note                       |
+| :---------------------: | -----------------: | -------------------------: |
+| project-structure       | :heavy_check_mark: | components, pages, layouts |
+| rendering-client-side   | :heavy_check_mark: | SPA                        |
+| rendering-server-side   | :no_entry:         | SSR                        |
+| rendering-universal-app | :no_entry:         | Isomorphic                 |
+| local-message           | :heavy_check_mark: | JSON                       |
+| local-lang-detect       | :heavy_check_mark: | Browser                    |
+| local-lang-change       | :warning:          |                            |
+| icons                   | :heavy_check_mark: | FontAwesome                |
+| layout-grid             | :heavy_check_mark: |                            |
+| layout-navbar           | :heavy_check_mark: |                            |
+| layout-routes           | :heavy_check_mark: |                            |
+| layout-help             | :heavy_check_mark: | general and pages          |
+| layout-breadcrumb       | :heavy_check_mark: |                            |
+
+## Security
+
+| Feature       | State | Note          |
+| :-----------: | ----: | ------------: |
+| auth-tocken   | :x:   |               |
+| auth-oauth2   | :x:   |               |
+| secu-role     | :x:   |               |
+| secu-right    | :x:   |               |
+| secu-page     | :x:   |               |
+| secu-routes   | :x:   |               |
+| user-settings | :x:   | local, remote |
+| user-profil   | :x:   | remote        |
 
 ## API
 
@@ -207,17 +220,6 @@ Legend
 | table-pagination | :x:   |      |
 | table-export     | :x:   |      |
 | table-expand-row | :x:   |      |
-
-## Security
-
-| Feature     | State | Note |
-| :---------: | ----: | ---: |
-| auth-tocken | :x:   |      |
-| auth-oauth2 | :x:   |      |
-| secu-role   | :x:   |      |
-| secu-right  | :x:   |      |
-| secu-page   | :x:   |      |
-| secu-routes | :x:   |      |
 
 ## Tests
 

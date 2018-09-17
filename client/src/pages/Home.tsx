@@ -38,7 +38,7 @@ export default class Home extends React.Component<any, IHomeState> {
             </div>
             <div>
               <h1>
-                <FormattedMessage id="home.welcome" values={{ name : "My-App"}}/>
+                <FormattedMessage id="home.welcome" values={{ appname: <FormattedMessage id="app.title" />}}/>
               </h1>
             </div>
         </div>
