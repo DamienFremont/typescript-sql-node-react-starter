@@ -11,6 +11,7 @@
     "breadcrumb.home": "Accueil",
     "breadcrumb.help": "Aide",
     "breadcrumb.about": "À propos",
+    "breadcrumb.contact": "Contact",
     "home.button": "Cliquer ici",
     "home.welcome": "Bienvenue sur {appname}",
     "about.title": "À propos",
@@ -25,5 +26,8 @@
     "help.fixproblems.title": "Résoudre les problèmes",
     "help.fixproblems.desc": "Signaler un problème ou envoyer des comentaires relatifs à {appname}",
     "notfound.title": "Désolé!",
-    "notfound.desc": "Page non trouvée..."
+    "notfound.desc": "Page non trouvée...",
+    "contact.title": "Contact",
+    "contact.desc": "Dites-nous ce qui ne vas pas.",
+    "contact.button": "Contactez-nous"
 }

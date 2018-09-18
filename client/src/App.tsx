@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import logo from './logo.svg';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import Help from './pages/Help';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
@@ -35,6 +36,7 @@ class App extends React.Component<any, IAppState> {
             <Route exact path="/" component={Home} />
             <Route exact path="/help" component={Help} />
             <Route exact path="/help/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
             <Route path="*" component={NotFound} />
           </Switch>
         </MainLayout>
