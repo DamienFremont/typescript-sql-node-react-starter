@@ -6,6 +6,7 @@ import { Col, Container, Row } from 'reactstrap';
 import AppFooter from '../components/app/AppFooter';
 import AppNavbar from '../components/app/AppNavbar';
 import AppSidebar from '../components/app/AppSidebar';
+import './MainLayout.css';
 
 interface IMainLayoutProps {
   logo: any;

@@ -16,7 +16,7 @@ export default class AppFooter extends React.Component {
                 <Button color="link" size="sm" tag={Link} to="/help">
                     {intl.get('footer.help')}
                 </Button>{' '}
-                <Button color="link" size="sm" disabled>
+                <Button color="link" size="sm" href="/terms.html" target="_blanck">
                     {intl.get('footer.copyright')}
                 </Button>
             </StickyFooter>

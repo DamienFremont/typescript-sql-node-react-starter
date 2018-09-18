@@ -26,7 +26,9 @@ export default class Help extends React.Component<any, any> {
         </Breadcrumb>
 
         <div className="mt-5 mb-5 text-center">
-          <div> <FontAwesomeIcon icon={faQuestionCircle} size="4x" />{' '}  </div>
+          <div> 
+            <FontAwesomeIcon icon={faQuestionCircle} size="4x" /> 
+          </div>
           <h1> {intl.get('help.title')}</h1>
         </div>
         <Container>
@@ -37,7 +39,7 @@ export default class Help extends React.Component<any, any> {
                 {intl.get('help.getstarted.title', { appname: intl.get('app.title') })}
               </Button>
             </ListGroupItem>
-            <Collapse isOpen={this.state.open === '#getstarted'}>
+            <Collapse isOpen={this.isGetstarted()}>
               <ListGroupItem>
                 <GetStartedHelp />
               </ListGroupItem>
@@ -48,7 +50,7 @@ export default class Help extends React.Component<any, any> {
                 {intl.get('help.fixproblems.title')}
               </Button>
             </ListGroupItem>
-            <Collapse isOpen={this.state.open === '#fixproblems'}>
+            <Collapse isOpen={this.isFixproblems()}>
               <ListGroupItem>
                 <FixProblemsHelp />
               </ListGroupItem>
@@ -60,18 +62,6 @@ export default class Help extends React.Component<any, any> {
     );
   }
 
-  private toggleGetstarted() {
-    this.setState({
-      open: '#getstarted'
-    });
-  }
-
-  private toggleFixproblems() {
-    this.setState({
-      open: '#fixproblems'
-    });
-  }
-
   private initState(): any {
     if (!this.props.location.hash) {
       return {
@@ -81,5 +71,25 @@ export default class Help extends React.Component<any, any> {
     return {
       open: this.props.location.hash
     };
+  }
+
+  private isGetstarted() {
+    return this.state.open === '#getstarted';
+  }
+
+  private isFixproblems() {
+    return this.state.open === '#fixproblems';
+  }
+
+  private toggleGetstarted() {
+    this.setState({
+      open: (this.isGetstarted() ? undefined : '#getstarted')
+    });
+  }
+
+  private toggleFixproblems() {
+    this.setState({
+      open: (this.isFixproblems() ? undefined : '#fixproblems')
+    });
   }
 }

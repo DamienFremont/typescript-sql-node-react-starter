@@ -69,7 +69,7 @@ export default class About extends React.Component {
               <p>{intl.get('app.title')}</p>
               <p>{intl.get('about.copyright', { company: intl.get('app.company') })}</p>
               <p>{intl.get('about.terms')}
-                <Button color="link" tag={Link} to="/terms" >
+                <Button color="link" href="/terms.html" target="_blanck">
                   <FontAwesomeIcon icon={faFileContract} fixedWidth />{' '}
                 </Button >
               </p>

@@ -33,8 +33,9 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
   public render() {
     return (
       <div className={"bg-light " + this.props.className}>
+        <div>&nbsp;</div>
         <Nav vertical>
-          {this.renderNavLink("nav.peopleSearch", faSearch, "people/create")}
+          {this.renderNavLink("nav.peopleSearch", faSearch, "/people/search")}
           {this.renderNavLink("nav.peopleCreate", faPlus, "/people/create")}
         </Nav>
         <hr />
@@ -42,6 +43,7 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
           {this.renderNavLink("nav.help", faQuestion, "/help")}
           {this.renderNavLink("nav.about", faInfo, "/help/about")}
         </Nav>
+        <div>&nbsp;</div>
       </div>
     );
   }

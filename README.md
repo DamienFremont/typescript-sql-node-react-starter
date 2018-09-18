@@ -144,6 +144,7 @@ Legend
 | access-breadcrumb | :heavy_check_mark: |      |
 | access-size       | :heavy_check_mark: | em   |
 | access-wcag-aria  | :x:                |      |
+| access-offline    | :x:                |      |
 
 ## Security
 

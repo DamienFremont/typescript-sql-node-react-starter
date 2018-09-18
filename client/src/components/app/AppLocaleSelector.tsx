@@ -38,15 +38,15 @@ export default class AppLocaleSelector extends React.Component<IAppLocaleSelecto
     /**
      *  @see https://www.flaticon.com/packs/countrys-flags
      */
-    private renderItem(element: INameValue) {
-        const url = "/?lang=" + element.value;
-        const imgSrc = "/locales/" + element.value + ".png";
+    private renderItem(value: INameValue, index: any) {
+        const url = "/?lang=" + value.value;
+        const imgSrc = "/locales/" + value.value + ".png";
         return (
-            <DropdownItem >
+            <DropdownItem key={index}>
                 <Button color="link" href={url}>
                     <img src={imgSrc} className="AppLocaleSelector_flag" />
                     {' '}
-                    {element.name}
+                    {value.name}
                 </Button>
             </DropdownItem>
         );
