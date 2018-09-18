@@ -27,7 +27,6 @@ export default class MainLayout extends React.Component<IMainLayoutProps, any> {
               </Col>
               <Col xs={10} sm="11" md="11" lg="9" xl="10">
                 {this.props.children}
-                <p style={{ marginBottom: "60px" }}>{' '}</p>
               </Col>
             </Row>
           </Container>

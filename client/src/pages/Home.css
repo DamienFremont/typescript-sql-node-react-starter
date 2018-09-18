@@ -1,6 +1,6 @@
 .Home-logo {
   animation: Home-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 5em;
 }
 
 @keyframes Home-logo-spin {

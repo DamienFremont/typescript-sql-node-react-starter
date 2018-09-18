@@ -1,4 +1,4 @@
-import { faFileContract, faFileSignature, faShareSquare } from '@fortawesome/free-solid-svg-icons';
+import { faFileContract, faFileSignature, faQuestionCircle, faShareSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
@@ -26,7 +26,12 @@ export default class About extends React.Component {
           <BreadcrumbItem><Link to="/help">{intl.get('breadcrumb.help')}</Link></BreadcrumbItem>
           <BreadcrumbItem active>{intl.get('breadcrumb.about')}</BreadcrumbItem>
         </Breadcrumb>
-
+        <div className="text-right">
+          <Button color="link" tag={Link} to="/help#getstarted">
+            <FontAwesomeIcon icon={faQuestionCircle} />
+          </Button>
+        </div>
+        
         <Container>
           <p>
             {intl.get('about.title')}

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 import HelloAPI from '../api/HelloAPI';
-import img from './Home-img.svg';
+import img from '../logo.svg';
 
 interface IHomeState {
   response: string;
@@ -34,12 +34,18 @@ export default class Home extends React.Component<any, IHomeState> {
       <div>
 
         <div className="jumbotron text-center">
-            <div>
-              <img src={img} className="Home-logo" alt="logo" />
-            </div>
-            <div>
-              <h1>{intl.get('home.welcome', { appname: intl.get('app.title') })}</h1>
-            </div>
+          <div>
+            <img src={img} className="Home-logo" alt="logo" />
+          </div>
+          <div>
+            <h1>{intl.get('home.welcome', { appname: intl.get('app.title') })}</h1>
+          </div>
+        </div>
+
+        <div className="text-right">
+          <Button color="link" tag={Link} to="/help#getstarted">
+            <FontAwesomeIcon icon={faQuestionCircle} />
+          </Button>
         </div>
 
         <div className="text-center">
@@ -53,9 +59,6 @@ export default class Home extends React.Component<any, IHomeState> {
             {intl.get('home.button')}
           </Button>
         </div>
-        <Button color="link" tag={Link} to="/help#getstarted">
-          <FontAwesomeIcon icon={faQuestionCircle} />
-        </Button>
       </div>
     );
   }

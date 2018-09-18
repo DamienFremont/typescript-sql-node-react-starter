@@ -135,8 +135,15 @@ Legend
 | layout-navbar           | :heavy_check_mark: |                            |
 | layout-routes           | :heavy_check_mark: |                            |
 | layout-help             | :heavy_check_mark: | general and pages          |
-| layout-breadcrumb       | :heavy_check_mark: |                            |
 | layout-urls             | :heavy_check_mark: | SSR, CSR perfs             |
+
+## Accessibility
+
+| Feature           | State              | Note |
+| :---------------: | -----------------: | ---: |
+| access-breadcrumb | :heavy_check_mark: |      |
+| access-size       | :heavy_check_mark: | em   |
+| access-wcag-aria  | :x:                |      |
 
 ## Security
 
