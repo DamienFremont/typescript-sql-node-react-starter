@@ -10,7 +10,7 @@ export default class AppFooter extends React.Component {
     public render() {
         return (
             <StickyFooter className="bg-light">
-                <Button color="link" size="sm" tag={Link} to="mailto:test@test.com">
+                <Button color="link" size="sm" tag={Link} to="/contact">
                     {intl.get('footer.contact')}
                 </Button>{' '}
                 <Button color="link" size="sm" tag={Link} to="/help">
