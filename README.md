@@ -87,7 +87,7 @@ npm start
 Use it
   - Go to [http://localhost:3000](http://localhost:3000)
   - Login with 'user', 'superuser' or 'admin' (login=password).
-  - 
+
 ---
 
 # Features
@@ -111,6 +111,8 @@ Legend
 
 ## Packaging
 
+![alt text](docs/README-feature-packaging.png)
+
 | Feature          | State              | Note         |
 | :--------------: | -----------------: | -----------: |
 | build-dev        | :heavy_check_mark: |              |
@@ -120,6 +122,8 @@ Legend
 | conf-placeholder | :heavy_check_mark: | dotenv       |
 
 ## App
+
+![alt text](docs/README-feature-app.png)
 
 | Feature                 | State              | Note                       |
 | :---------------------: | -----------------: | -------------------------: |
