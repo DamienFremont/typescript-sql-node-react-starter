@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
+import { Link } from 'react-router-dom';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler } from 'reactstrap';
 
 import App from '../../App';
@@ -32,7 +33,7 @@ export default class AppNavbar extends React.Component<IAppNavbarProps, IAppNavb
         const isOpen = this.state.isOpen;
         return (
             <Navbar color="dark" dark expand="md">
-                <NavbarBrand href="/">
+                <NavbarBrand tag={Link} to="/">
                     {logo ?
                         <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="" />
                         : null}

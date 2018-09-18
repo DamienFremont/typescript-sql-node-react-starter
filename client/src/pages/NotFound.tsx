@@ -2,6 +2,7 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
+import { Link } from 'react-router-dom';
 import { Breadcrumb } from 'reactstrap';
 import BreadcrumbItem from 'reactstrap/lib/BreadcrumbItem';
 
@@ -11,7 +12,7 @@ export default class NotFound extends React.Component {
     return (
       <div>
         <Breadcrumb>
-          <BreadcrumbItem><a href="/">{intl.get('breadcrumb.home')}</a></BreadcrumbItem>
+          <BreadcrumbItem><Link to="/">{intl.get('breadcrumb.home')}</Link></BreadcrumbItem>
         </Breadcrumb>
         
         <div className="mt-5 mb-5 text-center">

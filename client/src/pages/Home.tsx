@@ -4,6 +4,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
+import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 import HelloAPI from '../api/HelloAPI';
@@ -52,7 +53,7 @@ export default class Home extends React.Component<any, IHomeState> {
             {intl.get('home.button')}
           </Button>
         </div>
-        <Button color="link" href="/help#getstarted">
+        <Button color="link" tag={Link} to="/help#getstarted">
           <FontAwesomeIcon icon={faQuestionCircle} />
         </Button>
       </div>

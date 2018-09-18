@@ -2,8 +2,8 @@ import { faFileContract, faFileSignature, faShareSquare } from '@fortawesome/fre
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
-import { Breadcrumb, BreadcrumbItem, Button, ListGroup, ListGroupItem } from 'reactstrap';
-import Container from 'reactstrap/lib/Container';
+import { Link } from 'react-router-dom';
+import { Breadcrumb, BreadcrumbItem, Button, Container, ListGroup, ListGroupItem } from 'reactstrap';
 
 import packageJson from '../../package.json';
 import logo from '../logo.svg';
@@ -22,8 +22,8 @@ export default class About extends React.Component {
     return (
       <div>
         <Breadcrumb>
-          <BreadcrumbItem><a href="/">{intl.get('breadcrumb.home')}</a></BreadcrumbItem>
-          <BreadcrumbItem><a href="/help">{intl.get('breadcrumb.help')}</a></BreadcrumbItem>
+          <BreadcrumbItem><Link to="/">{intl.get('breadcrumb.home')}</Link></BreadcrumbItem>
+          <BreadcrumbItem><Link to="/help">{intl.get('breadcrumb.help')}</Link></BreadcrumbItem>
           <BreadcrumbItem active>{intl.get('breadcrumb.about')}</BreadcrumbItem>
         </Breadcrumb>
 
@@ -45,13 +45,13 @@ export default class About extends React.Component {
             </ListGroupItem>
             <ListGroupItem>
               {intl.get('about.gethelp', { appname: intl.get('app.title') })}
-              <Button color="link" href="/help" >
+              <Button color="link" tag={Link} to="/help" >
                 <FontAwesomeIcon icon={faShareSquare} fixedWidth />{' '}
               </Button >
             </ListGroupItem>
             <ListGroupItem>
               {intl.get('about.reportissue')}
-              <Button color="link" href="/contact" >
+              <Button color="link" tag={Link} to="/contact" >
                 <FontAwesomeIcon icon={faFileSignature} fixedWidth />{' '}
               </Button>
             </ListGroupItem>
@@ -64,7 +64,7 @@ export default class About extends React.Component {
               <p>{intl.get('app.title')}</p>
               <p>{intl.get('about.copyright', { company: intl.get('app.company') })}</p>
               <p>{intl.get('about.terms')}
-                <Button color="link" href="/terms" >
+                <Button color="link" tag={Link} to="/terms" >
                   <FontAwesomeIcon icon={faFileContract} fixedWidth />{' '}
                 </Button >
               </p>

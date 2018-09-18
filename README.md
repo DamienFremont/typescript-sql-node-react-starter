@@ -136,7 +136,7 @@ Legend
 | layout-routes           | :heavy_check_mark: |                            |
 | layout-help             | :heavy_check_mark: | general and pages          |
 | layout-breadcrumb       | :heavy_check_mark: |                            |
-| layout-urls             | :x:                | SSR and CSR                |
+| layout-urls             | :heavy_check_mark: | SSR, CSR perfs             |
 
 ## Security
 

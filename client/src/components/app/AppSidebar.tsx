@@ -2,6 +2,7 @@ import { faInfo, faPlus, faQuestion, faSearch, IconDefinition } from '@fortaweso
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
+import { Link } from 'react-router-dom';
 import { Nav, NavLink } from 'reactstrap';
 
 interface IAppSidebarProps {
@@ -49,7 +50,7 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
     const { width } = this.state;
     const isMobile = width <= 776;
     return (
-      <NavLink href={href} >
+      <NavLink tag={Link} to={href} >
         <FontAwesomeIcon icon={icon} fixedWidth />{' '}
         <span hidden={isMobile}>
           {intl.get(messageId)}
