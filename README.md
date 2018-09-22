@@ -156,7 +156,7 @@ Legend
 
 |    Feature    | State |          Note |
 |:-------------:|------:|--------------:|
-|  auth-tocken  |   :x: |               |
+|  auth-local   |   :x: |               |
 |  auth-oauth2  |   :x: |               |
 |   secu-role   |   :x: |               |
 |  secu-right   |   :x: |               |
@@ -293,5 +293,10 @@ Legend
 * Internationalize change language
 
 * file download
+
+* node ts react https://github.com/gilamran/fullstack-typescript
+* node ts react https://github.com/kuldeepkeshwar/react-express-typescript-starter
+* node ts react https://github.com/isaacsinuhe/create-react-app-ts-express-basic
+* node ts react https://medium.com/front-end-hacking/client-server-and-shared-code-846097c5260e
 
 * sql dump https://stackoverflow.com/questions/36392113/import-sql-dump-within-node-environment

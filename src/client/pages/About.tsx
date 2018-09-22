@@ -5,7 +5,7 @@ import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Button, Container, ListGroup, ListGroupItem } from 'reactstrap';
 
-import packageJson from '../../package.json';
+import packageJson from '../../../package.json';
 import logo from '../logo.svg';
 
 // TODO: move logo

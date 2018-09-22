@@ -8,14 +8,14 @@
             "type": "node",
             "request": "launch",
             "name": "Launch NodeJS against localhost",
-            "program": "${workspaceFolder}/server.js"
+            "program": "${workspaceFolder}/dist/server/index.js"
         },
         {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}/client/src",
+            "webRoot": "${workspaceFolder}/src",
             "userDataDir": false,
             "sourceMapPathOverrides": {
                 "webpack:///src/*": "${webRoot}/*"
