@@ -25,34 +25,34 @@ This technical stack is not the state-of-the-art, but a stable one (no need to w
 
 ## Project view
 
-| Area     | Product                | Plugins or Impl                 |
-| :------: | ---------------------: | ------------------------------: |
-| Language | TypeScript             |                                 |
-| UI       | Bootstrap              | JQuery                          |
-| App      | ReactJS                | react-router, react-intl, redux |
-| API      | HTTP-client, ExpressJS | Swagger (OpenAPI)               |
-| Data     | Sequelize, SQL         | SQLite, PostGreSQL              |
-| Secu     | Passport               |                                 |
-| Env      | dotenv                 |                                 |
+|   Area   |                Product |                 Plugins or Impl |
+|:--------:|-----------------------:|--------------------------------:|
+| Language |             TypeScript |                                 |
+|    UI    |              Bootstrap |                          JQuery |
+|   App    |                ReactJS | react-router, react-intl, redux |
+|   API    | HTTP-client, ExpressJS |               Swagger (OpenAPI) |
+|   Data   |         Sequelize, SQL |              SQLite, PostGreSQL |
+|   Secu   |               Passport |                                 |
+|   Env    |                 dotenv |                                 |
 
 ## Stack view
 
-| Layer            | Product     | Plugins or Impl                 |
-| :--------------: | ----------: | ------------------------------: |
+|      Layer       |     Product |                 Plugins or Impl |
+|:----------------:|------------:|--------------------------------:|
 | Client (browser) |             |                                 |
-|                  | Bootstrap   | JQuery                          |
-|                  | ReactJS     | react-router, react-intl, redux |
-|                  | HTTP-client | Swagger (OpenAPI)               |
-|                  | Passport    |                                 |
+|                  |   Bootstrap |                          JQuery |
+|                  |     ReactJS | react-router, react-intl, redux |
+|                  | HTTP-client |               Swagger (OpenAPI) |
+|                  |    Passport |                                 |
 | Server (NodeJS)  |             |                                 |
-|                  | ExpressJS   | Swagger (OpenAPI)               |
-|                  | Passport    |                                 |
-|                  | Sequelize   |                                 |
-|                  | dotenv      |                                 |
-| Database (dev)   |             |                                 |
-|                  | SQLite      | SQL                             |
+|                  |   ExpressJS |               Swagger (OpenAPI) |
+|                  |    Passport |                                 |
+|                  |   Sequelize |                                 |
+|                  |      dotenv |                                 |
+|  Database (dev)  |             |                                 |
+|                  |      SQLite |                             SQL |
 | Database (prod)  |             |                                 |
-|                  | PostGreSQL  | SQL                             |
+|                  |  PostGreSQL |                             SQL |
 
 ---
 
@@ -113,137 +113,139 @@ Legend
 
 ![alt text](docs/README-feature-packaging.png)
 
-| Feature          | State              | Note         |
-| :--------------: | -----------------: | -----------: |
-| build-dev        | :heavy_check_mark: |              |
-| build-prod       | :heavy_check_mark: |              |
-| conf-env         | :heavy_check_mark: | NODE-ENV=... |
-| conf-file        | :heavy_check_mark: | dotenv       |
-| conf-placeholder | :heavy_check_mark: | dotenv       |
+|     Feature      |              State |         Note |
+|:----------------:|-------------------:|-------------:|
+|    build-dev     | :heavy_check_mark: |              |
+|    build-prod    | :heavy_check_mark: |              |
+|     conf-env     | :heavy_check_mark: | NODE-ENV=... |
+|    conf-file     | :heavy_check_mark: |       dotenv |
+| conf-placeholder | :heavy_check_mark: |       dotenv |
+|      banner      | :heavy_check_mark: |   banner.txt |
+|      logger      | :heavy_check_mark: | level in env |
 
 ## App
 
 ![alt text](docs/README-feature-app.png)
 
-| Feature                 | State              | Note                       |
-| :---------------------: | -----------------: | -------------------------: |
-| project-structure       | :heavy_check_mark: | components, pages, layouts |
-| rendering-client-side   | :heavy_check_mark: | SPA                        |
-| rendering-server-side   | :no_entry:         | SSR                        |
-| rendering-universal-app | :no_entry:         | Isomorphic                 |
-| local-message           | :heavy_check_mark: | JSON                       |
-| local-lang-detect       | :heavy_check_mark: | Browser                    |
-| local-lang-change       | :heavy_check_mark: |                            |
-| icons                   | :heavy_check_mark: | FontAwesome                |
-| layout-grid             | :heavy_check_mark: |                            |
-| layout-navbar           | :heavy_check_mark: |                            |
-| layout-routes           | :heavy_check_mark: |                            |
-| layout-help             | :heavy_check_mark: | general and pages          |
-| layout-urls             | :heavy_check_mark: | SSR, CSR perfs             |
+|         Feature         |              State |                       Note |
+|:-----------------------:|-------------------:|---------------------------:|
+|    project-structure    | :heavy_check_mark: | components, pages, layouts |
+|  rendering-client-side  | :heavy_check_mark: |                        SPA |
+|  rendering-server-side  |         :no_entry: |                        SSR |
+| rendering-universal-app |         :no_entry: |                 Isomorphic |
+|      local-message      | :heavy_check_mark: |                       JSON |
+|    local-lang-detect    | :heavy_check_mark: |                    Browser |
+|    local-lang-change    | :heavy_check_mark: |                            |
+|          icons          | :heavy_check_mark: |                FontAwesome |
+|       layout-grid       | :heavy_check_mark: |                            |
+|      layout-navbar      | :heavy_check_mark: |                            |
+|      layout-routes      | :heavy_check_mark: |                            |
+|       layout-help       | :heavy_check_mark: |          general and pages |
+|       layout-urls       | :heavy_check_mark: |             SSR, CSR perfs |
 
 ## Accessibility
 
-| Feature           | State              | Note |
-| :---------------: | -----------------: | ---: |
+|      Feature      |              State | Note |
+|:-----------------:|-------------------:|-----:|
 | access-breadcrumb | :heavy_check_mark: |      |
-| access-size       | :heavy_check_mark: | em   |
-| access-wcag-aria  | :x:                |      |
-| access-offline    | :x:                |      |
+|    access-size    | :heavy_check_mark: |   em |
+| access-wcag-aria  |                :x: |      |
+|  access-offline   |                :x: |      |
 
 ## Security
 
-| Feature       | State | Note          |
-| :-----------: | ----: | ------------: |
-| auth-tocken   | :x:   |               |
-| auth-oauth2   | :x:   |               |
-| secu-role     | :x:   |               |
-| secu-right    | :x:   |               |
-| secu-page     | :x:   |               |
-| secu-routes   | :x:   |               |
-| user-settings | :x:   | local, remote |
-| user-profil   | :x:   | remote        |
+|    Feature    | State |          Note |
+|:-------------:|------:|--------------:|
+|  auth-tocken  |   :x: |               |
+|  auth-oauth2  |   :x: |               |
+|   secu-role   |   :x: |               |
+|  secu-right   |   :x: |               |
+|   secu-page   |   :x: |               |
+|  secu-routes  |   :x: |               |
+| user-settings |   :x: | local, remote |
+|  user-profil  |   :x: |        remote |
 
 ## API
 
-| Feature            | State | Note    |
-| :----------------: | ----: | ------: |
-| api-client         | :x:   |         |
-| api-server         | :x:   | Express |
-| api-swagger        | :x:   | OpenAPI |
-| api-version        | :x:   |         |
-| api-private-public | :x:   |         |
+|      Feature       | State |    Note |
+|:------------------:|------:|--------:|
+|     api-client     |   :x: |         |
+|     api-server     |   :x: | Express |
+|    api-swagger     |   :x: | OpenAPI |
+|    api-version     |   :x: |         |
+| api-private-public |   :x: |         |
 
 ## Service
 
-| Feature                | State | Note               |
-| :--------------------: | ----: | -----------------: |
-| service-store          | :x:   |                    |
-| server-authent         | :x:   |                    |
-| server-security        | :x:   |                    |
-| server-data-validation | :x:   | AJV                |
-| server-local-message   | :x:   | server-side locale |
+|        Feature         | State |               Note |
+|:----------------------:|------:|-------------------:|
+|     service-store      |   :x: |                    |
+|     server-authent     |   :x: |                    |
+|    server-security     |   :x: |                    |
+| server-data-validation |   :x: |                AJV |
+|  server-local-message  |   :x: | server-side locale |
 
 ## Data
 
-| Feature           | State | Note                  |
-| :---------------: | ----: | --------------------: |
-| file-download     | :x:   |                       |
-| file-upload       | :x:   | browse, drop, preview |
-| data-schema       | :x:   |                       |
-| data-dataset      | :x:   |                       |
-| data-orm-crud     | :x:   |                       |
-| data-orm-paginate | :x:   |                       |
-| data-orm-search   | :x:   |                       |
+|      Feature      | State |                  Note |
+|:-----------------:|------:|----------------------:|
+|   file-download   |   :x: |                       |
+|    file-upload    |   :x: | browse, drop, preview |
+|    data-schema    |   :x: |                       |
+|   data-dataset    |   :x: |                       |
+|   data-orm-crud   |   :x: |                       |
+| data-orm-paginate |   :x: |                       |
+|  data-orm-search  |   :x: |                       |
 
 ## Entity
 
-| Feature        | State | Note                                                                   |
-| :------------: | ----: | ---------------------------------------------------------------------: |
-| data-entity    | :x:   | entity, value-object, id, modified-by-at, created-by-at, deleted-by-at |
-| data-reference | :x:   | reference (name, label)                                                |
-| data-history   | :x:   | version, history, event                                                |
-| data-domain    | :x:   | UUID, join models by only one UUID                                     |
+|    Feature     | State |                                                                   Note |
+|:--------------:|------:|-----------------------------------------------------------------------:|
+|  data-entity   |   :x: | entity, value-object, id, modified-by-at, created-by-at, deleted-by-at |
+| data-reference |   :x: |                                                reference (name, label) |
+|  data-history  |   :x: |                                                version, history, event |
+|  data-domain   |   :x: |                                     UUID, join models by only one UUID |
 
 ## Workflow
 
-| Feature         | State | Note |
-| :-------------: | ----: | ---: |
-| workflow-client | :x:   |      |
-| workflow-server | :x:   |      |
+|     Feature     | State | Note |
+|:---------------:|------:|-----:|
+| workflow-client |   :x: |      |
+| workflow-server |   :x: |      |
 
 ## Form
 
-| Feature         | State | Note |
-| :-------------: | ----: | ---: |
-| form-edition    | :x:   |      |
-| form-toolbar    | :x:   |      |
-| form-exemple    | :x:   |      |
-| form-validation | :x:   |      |
-| date-picker     | :x:   |      |
-| data-validation | :x:   | AJV  |
+|     Feature     | State | Note |
+|:---------------:|------:|-----:|
+|  form-edition   |   :x: |      |
+|  form-toolbar   |   :x: |      |
+|  form-exemple   |   :x: |      |
+| form-validation |   :x: |      |
+|   date-picker   |   :x: |      |
+| data-validation |   :x: |  AJV |
 
 ## Data-Table  
 
-| Feature          | State | Note |
-| :--------------: | ----: | ---: |
-| table            | :x:   |      |
-| table-modal      | :x:   |      |
-| table-sort       | :x:   |      |
-| table-filtering  | :x:   |      |
-| table-pagination | :x:   |      |
-| table-export     | :x:   |      |
-| table-expand-row | :x:   |      |
+|     Feature      | State | Note |
+|:----------------:|------:|-----:|
+|      table       |   :x: |      |
+|   table-modal    |   :x: |      |
+|    table-sort    |   :x: |      |
+| table-filtering  |   :x: |      |
+| table-pagination |   :x: |      |
+|   table-export   |   :x: |      |
+| table-expand-row |   :x: |      |
 
 ## Tests
 
-| Feature           | State | Note           |
-| :---------------: | ----: | -------------: |
-| test-unit         | :x:   |                |
-| test-int          | :x:   | integration    |
-| test-ui           | :x:   | user-interface |
-| cucumber-edit     | :x:   | NON-DEV        |
-| cucumber-build    | :x:   |                |
-| cucumber-refactor | :x:   |                |
+|      Feature      | State |           Note |
+|:-----------------:|------:|---------------:|
+|     test-unit     |   :x: |                |
+|     test-int      |   :x: |    integration |
+|      test-ui      |   :x: | user-interface |
+|   cucumber-edit   |   :x: |        NON-DEV |
+|  cucumber-build   |   :x: |                |
+| cucumber-refactor |   :x: |                |
 
 ## Charts
 
@@ -262,7 +264,7 @@ Legend
       - Debugger
   - Chromium
     - REST Client
-    - 
+    
 ## Other
 
 - templating

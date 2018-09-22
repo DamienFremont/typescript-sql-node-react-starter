@@ -20,6 +20,8 @@ startApp((START_DURATION) => {
   });
 });
 
+/* IMPL ******************************************************** */
+
 function logEnv() {
   logger.log('info', 'Starting Application');
   if (process.pid) {
@@ -42,7 +44,7 @@ function initAPI(app) {
   logger.log('info', 'Initiated API');
 }
 
-/* IMPL ******************************************************** */
+/* UTILS ******************************************************** */
 
 function createExpress() {
   logger.log('info', 'Starting Express');
@@ -71,6 +73,9 @@ function startExpress(app, productionCallback, callback) {
     logger.log('info', 'You can now view application.');
     logger.log('info', ' ');
     logger.log('info', `  Local:            http://127.0.0.1:${port}`);
+    logger.log('info', `                    http://127.0.0.1:${port}/index.html`);
+    logger.log('info', `                    http://127.0.0.1:${port}/api/`);
+    logger.log('info', `  On your network:  http://${networkInterfaces.Ethernet[1].address}:${port}`);
     logger.log('info', ' ');
     callback(port);
   });
