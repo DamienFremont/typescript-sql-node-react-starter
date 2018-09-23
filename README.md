@@ -156,8 +156,9 @@ Legend
 
 |    Feature    | State |          Note |
 |:-------------:|------:|--------------:|
-|  auth-local   |   :x: |               |
-|  auth-oauth2  |   :x: |               |
+|  auth-local   |   :x: |     HTML form |
+|  auth-openid  |   :x: |        OpenID |
+|    auth-ad    |   :x: |          SAML |
 |   secu-role   |   :x: |               |
 |  secu-right   |   :x: |               |
 |   secu-page   |   :x: |               |
@@ -199,12 +200,12 @@ Legend
 
 ## Entity
 
-|    Feature     | State |                                                                   Note |
-|:--------------:|------:|-----------------------------------------------------------------------:|
-|  data-entity   |   :x: | entity, value-object, id, modified-by-at, created-by-at, deleted-by-at |
-| data-reference |   :x: |                                                reference (name, label) |
-|  data-history  |   :x: |                                                version, history, event |
-|  data-domain   |   :x: |                                     UUID, join models by only one UUID |
+|    Feature     | State |                                           Note |
+|:--------------:|------:|-----------------------------------------------:|
+|  data-entity   |   :x: | entity, value-object, id, dates, deleted-by-at |
+| data-reference |   :x: |                        reference (name, label) |
+|  data-history  |   :x: |                        version, history, event |
+|  data-domain   |   :x: |             UUID, join models by only one UUID |
 
 ## Workflow
 

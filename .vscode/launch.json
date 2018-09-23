@@ -7,8 +7,13 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch NodeJS against localhost",
-            "program": "${workspaceFolder}/dist/server/index.js"
+            "name": "Debug TypeScript in Node.js",
+            "program": "${workspaceFolder}/src/server/index.ts",
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "outFiles": [
+              "${workspaceFolder}/dist/server/index.js"
+            ]
         },
         {
             "type": "chrome",

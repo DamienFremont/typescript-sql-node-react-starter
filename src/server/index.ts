@@ -1,35 +1,46 @@
 import * as express from 'express';
 import * as http from 'http';
 import * as os from 'os';
+import * as passport from 'passport';
 import * as path from 'path';
 
-import { apiRouter } from './routes/apiRouter';
+import { LocalStrategy, loginApi } from './authent';
+import { helloApi } from './api/helloApi';
 import { staticsRouter } from './routes/staticsRouter';
-import { createLogger } from './utils/createLogger';
-import { logBanner } from './utils/logBanner';
-import { overrideEnv } from './utils/overrideEnv';
+import { createLogger, logBanner, overrideEnv } from './utils';
+
+/**
+ * Main script for server
+ */
+
+const START_DURATION = 'Started Application in seconds';
+console.time(START_DURATION);
 
 const app = express()
 const port = process.env.PORT || 5000;
 const base = '../../';
-const START_DURATION = 'Started Application in seconds';
 
-console.time(START_DURATION);
+passport.use(LocalStrategy.create());
+passport.serializeUser(LocalStrategy.serializeUser);
+passport.deserializeUser(LocalStrategy.deserializeUser);
 
 logBanner();
 overrideEnv();
-
 const logger = createLogger();
 logEnv();
 
-app.use(apiRouter());
 app.set('port', port)
 app.use(express.static(path.join(__dirname, base, 'build')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-// TODO: app.use(morgan('dev'))
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(loginApi(passport as any));
+
+app.use(helloApi());
+
 app.use(staticsRouter());
-app.use(apiRouter());
 
 const server = http.createServer(app);
 server.listen(app.get('port'), () => {

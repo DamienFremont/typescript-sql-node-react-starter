@@ -2,7 +2,7 @@ import * as bodyParser from 'body-parser';
 import { Router } from 'express';
 import IHelloDTO from '../../shared/model/IHelloDTO';
 
-export function apiRouter() {
+export function helloApi() {
     const router = Router();
     router.use(bodyParser.json());
 
