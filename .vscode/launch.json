@@ -7,12 +7,12 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug TypeScript in Node.js",
+            "name": "Launch Node + TS support",
             "program": "${workspaceFolder}/src/server/index.ts",
             "cwd": "${workspaceFolder}",
             "protocol": "inspector",
             "outFiles": [
-              "${workspaceFolder}/dist/server/index.js"
+              "${workspaceFolder}/dist/index.js"
             ]
         },
         {

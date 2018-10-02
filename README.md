@@ -70,7 +70,7 @@ Execute DEV
 npm install -g create-react-app
 npm install
 
-npm run dev
+npm run watch
 ```
 
 Execute PROD
@@ -301,3 +301,6 @@ Legend
 * node ts react https://medium.com/front-end-hacking/client-server-and-shared-code-846097c5260e
 
 * sql dump https://stackoverflow.com/questions/36392113/import-sql-dump-within-node-environment
+
+* express ts https://mherman.org/blog/developing-a-restful-api-with-node-and-typescript/
+* express ts https://github.com/Microsoft/TypeScript-Node-Starter/blob/master/package.json

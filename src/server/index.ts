@@ -1,3 +1,48 @@
+/**
+ * Main script for server
+ */
+// import * as debug from 'debug';
+import * as http from 'http';
+
+import App from './App';
+
+
+// debug('ts-express:server');
+
+const port = process.env.PORT || 5000;
+App.set('port', port);
+
+const server = http.createServer(App);
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+function onError(error: NodeJS.ErrnoException): void {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+  const bind = (typeof port === 'string') ? 'Pipe ' + port : 'Port ' + port;
+  switch (error.code) {
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges`);
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use`);
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+function onListening(): void {
+  // let addr = server.address();
+  // let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
+  // debug(`Listening on ${bind}`);
+}
+
+/*
 import * as express from 'express';
 import * as http from 'http';
 import * as os from 'os';
@@ -8,10 +53,6 @@ import { LocalStrategy, loginApi } from './authent';
 import { helloApi } from './api/helloApi';
 import { staticsRouter } from './routes/staticsRouter';
 import { createLogger, logBanner, overrideEnv } from './utils';
-
-/**
- * Main script for server
- */
 
 const START_DURATION = 'Started Application in seconds';
 console.time(START_DURATION);
@@ -76,3 +117,4 @@ function logHostname() {
   logger.log('info', `  On your network:  http://${networkInterfaces.Ethernet[1].address}:${p}`);
   logger.log('info', ' ');
 }
+*/
