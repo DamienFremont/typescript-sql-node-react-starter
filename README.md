@@ -68,7 +68,7 @@ Execute DEV
 
 ```
 npm install -g create-react-app
-npm run devinstall
+npm install
 
 npm run dev
 ```
