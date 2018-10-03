@@ -168,13 +168,13 @@ Legend
 
 ## API
 
-|      Feature       | State |    Note |
-|:------------------:|------:|--------:|
-|     api-client     |   :x: |         |
-|     api-server     |   :x: | Express |
-|    api-swagger     |   :x: | OpenAPI |
-|    api-version     |   :x: |         |
-| api-private-public |   :x: |         |
+|      Feature       |              State |    Note |
+|:------------------:|-------------------:|--------:|
+|     api-client     |                :x: |         |
+|     api-server     | :heavy_check_mark: | Express |
+|    api-swagger     |                :x: | OpenAPI |
+|    api-version     |                :x: |         |
+| api-private-public |                :x: |         |
 
 ## Service
 

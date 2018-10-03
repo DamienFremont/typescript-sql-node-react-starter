@@ -31,7 +31,7 @@ class App {
     // placeholder route handler
     router.get('/api/hello', (req, res, next) => {
       res.json({
-        express: 'Hello World in TS!'
+        express: 'Hello World from Express in TS!'
       });
     });
     this.express.use('/', router);

@@ -7,7 +7,9 @@ export function helloApi() {
     router.use(bodyParser.json());
 
     router.get('/api/hello', (req, res) => {
-        const body = { express: 'Hello From Express' } as IHelloDTO;
+        const body = { 
+            express: 'Hello From Express'
+        } as IHelloDTO;
         res.send(body);
     });
 
