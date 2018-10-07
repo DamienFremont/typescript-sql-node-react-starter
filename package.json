@@ -22,7 +22,7 @@
     "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node,React\" -c \"yellow.bold,cyan.bold,green.bold,blue.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run watch-node\" \"react-scripts-ts start\"",
     "watch-sass": "node-sass -w src/public/css/main.scss dist/public/css/main.css",
     "watch-ts": "tsc -w -p src/server",
-    "watch-node": "nodemon dist/index.js",
+    "watch-node": "nodemon dist/server/index.js",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"

@@ -1,8 +1,8 @@
-import IHelloDTO from "../../shared/model/IHelloDTO";
+import IHelloResponse from "../../shared/api/HelloModel";
 
 class HelloAPI {
 
-  public static async callApi(): Promise<IHelloDTO> {
+  public static async callApi(): Promise<IHelloResponse> {
     const response = await fetch('/api/hello');
     const body = await response.json();
     if (response.status !== 200) {
@@ -12,5 +12,4 @@ class HelloAPI {
   };
 
 }
-
 export default HelloAPI;

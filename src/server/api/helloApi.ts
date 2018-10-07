@@ -1,17 +1,16 @@
-import * as bodyParser from 'body-parser';
 import { Router } from 'express';
-import IHelloDTO from '../../shared/model/IHelloDTO';
 
-export function helloApi() {
-    const router = Router();
-    router.use(bodyParser.json());
+import IHelloResponse from '../../shared/api/HelloModel';
 
-    router.get('/api/hello', (req, res) => {
-        const body = { 
-            express: 'Hello From Express'
-        } as IHelloDTO;
-        res.send(body);
+export function helloApi(): Router {
+    const api = Router();
+
+    api.get('/', (req, res) => {
+        const body = {
+            express: 'Hello From Express from TS'
+        } as IHelloResponse;
+        res.json(body);
     });
 
-    return router;
+    return api;
 }

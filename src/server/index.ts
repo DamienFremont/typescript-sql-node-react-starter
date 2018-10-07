@@ -1,120 +1,28 @@
-/**
- * Main script for server
- */
-// import * as debug from 'debug';
 import * as http from 'http';
 
 import App from './App';
+import LoggerHelper from './helpers/LoggerHelper';
+import EnvUtils from './utils/EnvUtils';
 
+/**
+ * Main script for server
+ */
 
-// debug('ts-express:server');
+// env
+EnvUtils.initOrOverride();
+const port = (process.env.PORT || 5000) as number;
 
-const port = process.env.PORT || 5000;
-App.set('port', port);
+// logger
+const logger = new LoggerHelper();
+logger.logStart();
+logger.logBanner();
+logger.logEnv();
 
+// express
 const server = http.createServer(App);
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
-function onError(error: NodeJS.ErrnoException): void {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-  const bind = (typeof port === 'string') ? 'Pipe ' + port : 'Port ' + port;
-  switch (error.code) {
-    case 'EACCES':
-      console.error(`${bind} requires elevated privileges`);
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(`${bind} is already in use`);
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-function onListening(): void {
-  // let addr = server.address();
-  // let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
-  // debug(`Listening on ${bind}`);
-}
-
-/*
-import * as express from 'express';
-import * as http from 'http';
-import * as os from 'os';
-import * as passport from 'passport';
-import * as path from 'path';
-
-import { LocalStrategy, loginApi } from './authent';
-import { helloApi } from './api/helloApi';
-import { staticsRouter } from './routes/staticsRouter';
-import { createLogger, logBanner, overrideEnv } from './utils';
-
-const START_DURATION = 'Started Application in seconds';
-console.time(START_DURATION);
-
-const app = express()
-const port = process.env.PORT || 5000;
-const base = '../../';
-
-passport.use(LocalStrategy.create());
-passport.serializeUser(LocalStrategy.serializeUser);
-passport.deserializeUser(LocalStrategy.deserializeUser);
-
-logBanner();
-overrideEnv();
-const logger = createLogger();
-logEnv();
-
-app.set('port', port)
-app.use(express.static(path.join(__dirname, base, 'build')))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(loginApi(passport as any));
-
-app.use(helloApi());
-
-app.use(staticsRouter());
-
-const server = http.createServer(app);
-server.listen(app.get('port'), () => {
-  logHostname();
+// serve
+server.listen(port, () => {
+  logger.logEnd();
+  logger.logHostname(port);
 })
-
-console.timeEnd(START_DURATION);
-
-
-
-function logEnv() {
-  logger.log('info', 'Starting Application');
-  if (process.pid) {
-    logger.log('info', 'This process is your PID ' + process.pid);
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    logger.log('warn', 'mode = \'developpment\' (process.env.NODE_ENV not set to \'production\')');
-  }
-  logger.log('info', 'env var LOGGER_LEVEL = ' + logger.level);
-  logger.log('info', 'env var NODE_ENV = ' + process.env.NODE_ENV);
-  logger.log('info', 'env var CONTACT_MAIL = ' + process.env.CONTACT_MAIL);
-}
-
-function logHostname() {
-  const p = app.get('port');
-  logger.log('info', `Express started on port(s):  ${p}`);
-  const networkInterfaces = os.networkInterfaces();
-  logger.log('info', 'You can now view application.');
-  logger.log('info', ' ');
-  logger.log('info', `  Local:            http://127.0.0.1:${p}`);
-  logger.log('info', `                    http://127.0.0.1:${p}/index.html`);
-  logger.log('info', `                    http://127.0.0.1:${p}/api/`);
-  logger.log('info', `  On your network:  http://${networkInterfaces.Ethernet[1].address}:${p}`);
-  logger.log('info', ' ');
-}
-*/
