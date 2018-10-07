@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Breadcrumb, Button } from 'reactstrap';
 import BreadcrumbItem from 'reactstrap/lib/BreadcrumbItem';
 
-export default class Contact extends React.Component {
+class Contact extends React.Component {
 
   public render() {
     const mail = "test@test.com"
@@ -36,3 +36,4 @@ export default class Contact extends React.Component {
     );
   }
 }
+export default Contact;

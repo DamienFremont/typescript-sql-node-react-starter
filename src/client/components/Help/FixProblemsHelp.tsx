@@ -5,7 +5,7 @@ import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import Button from 'reactstrap/lib/Button';
 
-export default class FixProblemsHelp extends React.Component {
+class FixProblemsHelp extends React.Component {
 
     public render() {
         return (
@@ -21,3 +21,4 @@ export default class FixProblemsHelp extends React.Component {
         );
     }
 }
+export default FixProblemsHelp;

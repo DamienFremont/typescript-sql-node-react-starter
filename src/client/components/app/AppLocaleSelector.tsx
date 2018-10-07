@@ -16,12 +16,8 @@ interface INameValue {
 /**
  * @see https://github.com/alibaba/react-intl-universal/blob/master/examples/browser-example/
  */
-export default class AppLocaleSelector extends React.Component<IAppLocaleSelectorProps, any> {
-
-    constructor(props: IAppLocaleSelectorProps) {
-        super(props);
-    }
-
+class AppLocaleSelector extends React.Component<IAppLocaleSelectorProps, any> {
+    
     public render() {
         return (
             <UncontrolledDropdown nav inNavbar>
@@ -52,3 +48,4 @@ export default class AppLocaleSelector extends React.Component<IAppLocaleSelecto
         );
     }
 }
+export default AppLocaleSelector;

@@ -8,7 +8,7 @@ import { Breadcrumb, BreadcrumbItem, Button, Collapse, Container, ListGroup, Lis
 import FixProblemsHelp from '../components/Help/FixProblemsHelp';
 import GetStartedHelp from '../components/Help/GetStartedHelp';
 
-export default class Help extends React.Component<any, any> {
+class Help extends React.Component<any, any> {
 
   constructor(props: any) {
     super(props);
@@ -93,3 +93,4 @@ export default class Help extends React.Component<any, any> {
     });
   }
 }
+export default Help;

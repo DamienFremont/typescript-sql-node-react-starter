@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Breadcrumb } from 'reactstrap';
 import BreadcrumbItem from 'reactstrap/lib/BreadcrumbItem';
 
-export default class NotFound extends React.Component {
+class NotFound extends React.Component {
 
   public render() {
     return (
@@ -24,3 +24,4 @@ export default class NotFound extends React.Component {
     );
   }
 }
+export default NotFound;

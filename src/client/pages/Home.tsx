@@ -14,7 +14,7 @@ interface IHomeState {
   response: string;
 }
 
-export default class Home extends React.Component<any, IHomeState> {
+class Home extends React.Component<any, IHomeState> {
 
   constructor(props: any) {
     super(props);
@@ -70,3 +70,4 @@ export default class Home extends React.Component<any, IHomeState> {
     });
   };
 }
+export default Home;

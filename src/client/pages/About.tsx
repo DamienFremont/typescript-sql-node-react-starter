@@ -9,7 +9,7 @@ import packageJson from '../../../package.json';
 import logo from '../logo.svg';
 
 // TODO: move logo
-export default class About extends React.Component {
+class About extends React.Component {
 
   constructor(props: any) {
     super(props);
@@ -81,3 +81,4 @@ export default class About extends React.Component {
     );
   }
 }
+export default About;

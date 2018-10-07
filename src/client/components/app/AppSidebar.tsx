@@ -13,7 +13,7 @@ interface IAppSidebarProps {
  * @see https://reactstrap.github.io/components/navs/
  * @see https://goshakkk.name/different-mobile-desktop-tablet-layouts-react/
  */
-export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
+class AppSidebar extends React.Component<IAppSidebarProps, any> {
 
   constructor(props: IAppSidebarProps) {
     super(props);
@@ -65,3 +65,4 @@ export default class AppSidebar extends React.Component<IAppSidebarProps, any> {
     this.setState({ width: window.innerWidth });
   };
 }
+export default AppSidebar;

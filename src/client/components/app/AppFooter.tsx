@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 
 import { StickyFooter } from '../common';
 
-export default class AppFooter extends React.Component {
+class AppFooter extends React.Component {
 
     public render() {
         return (
@@ -23,3 +23,4 @@ export default class AppFooter extends React.Component {
         );
     }
 }
+export default AppFooter;

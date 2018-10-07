@@ -18,7 +18,7 @@ interface IAppNavbarProps {
 /**
  * @see https://reactstrap.github.io/components/navbar/
  */
-export default class AppNavbar extends React.Component<IAppNavbarProps, IAppNavbarState> {
+class AppNavbar extends React.Component<IAppNavbarProps, IAppNavbarState> {
 
     constructor(props: IAppNavbarProps) {
         super(props);
@@ -56,3 +56,4 @@ export default class AppNavbar extends React.Component<IAppNavbarProps, IAppNavb
     }
 
 }
+export default AppNavbar;

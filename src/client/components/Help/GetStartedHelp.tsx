@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
 
-export default class GetStartedHelp extends React.Component {
+class GetStartedHelp extends React.Component {
 
     public render() {
         return (
@@ -12,3 +12,4 @@ export default class GetStartedHelp extends React.Component {
         );
     }
 }
+export default GetStartedHelp;

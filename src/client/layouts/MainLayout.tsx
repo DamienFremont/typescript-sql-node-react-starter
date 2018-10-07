@@ -12,7 +12,7 @@ interface IMainLayoutProps {
   logo: any;
 }
 
-export default class MainLayout extends React.Component<IMainLayoutProps, any> {
+class MainLayout extends React.Component<IMainLayoutProps, any> {
 
   public render() {
     return (
@@ -40,3 +40,4 @@ export default class MainLayout extends React.Component<IMainLayoutProps, any> {
   }
 
 }
+export default MainLayout;
