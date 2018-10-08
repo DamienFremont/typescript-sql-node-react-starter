@@ -35,8 +35,8 @@ class AppSidebar extends React.Component<AppSidebarProps, any> {
       <div className={"bg-light " + this.props.className}>
         <div>&nbsp;</div>
         <Nav vertical>
-          {this.renderNavLink("nav.peopleSearch", faSearch, "/people/search")}
-          {this.renderNavLink("nav.peopleCreate", faPlus, "/people/create")}
+          {this.renderNavLink("nav.productSearch", faSearch, "/product/search")}
+          {this.renderNavLink("nav.productCreate", faPlus, "/product/create")}
         </Nav>
         <hr />
         <Nav vertical>
