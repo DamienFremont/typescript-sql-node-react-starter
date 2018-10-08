@@ -12,6 +12,8 @@ import Contact from './pages/Contact';
 import Help from './pages/Help';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import ProductSearch from './pages/ProductSearch';
+import ProductForm from './pages/ProductForm';
 
 interface AppState {
   initDone?: boolean;
@@ -37,6 +39,9 @@ class App extends React.Component<any, AppState> {
             <Route exact path="/help" component={Help} />
             <Route exact path="/help/about" component={About} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/product/search" component={ProductSearch} />
+            <Route exact path="/product/create" component={ProductForm} />
+            <Route exact path="/product/edit/1" component={ProductForm} />
             <Route path="*" component={NotFound} />
           </Switch>
         </MainLayout>

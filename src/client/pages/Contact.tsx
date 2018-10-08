@@ -1,10 +1,9 @@
-import { faFileSignature, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faFileSignature, faQuestionCircle, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, Button } from 'reactstrap';
-import BreadcrumbItem from 'reactstrap/lib/BreadcrumbItem';
+import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 
 class Contact extends React.Component {
 
@@ -14,7 +13,7 @@ class Contact extends React.Component {
     return (
       <div>
         <Breadcrumb>
-          <BreadcrumbItem><Link to="/">{intl.get('breadcrumb.home')}</Link></BreadcrumbItem>
+          <BreadcrumbItem><Link to="/"><FontAwesomeIcon icon={faHome} fixedWidth /></Link></BreadcrumbItem>
           <BreadcrumbItem active>{intl.get('breadcrumb.contact')}</BreadcrumbItem>
         </Breadcrumb>
         <div className="text-right">

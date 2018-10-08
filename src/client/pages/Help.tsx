@@ -1,12 +1,13 @@
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Button, Collapse, Container, ListGroup, ListGroupItem } from 'reactstrap';
 
-import FixProblemsHelp from '../components/Help/FixProblemsHelp';
-import GetStartedHelp from '../components/Help/GetStartedHelp';
+import FixProblemsHelp from '../components/help/FixProblemsHelp';
+import GetStartedHelp from '../components/help/GetStartedHelp';
+import ProductHelp from '../components/help/ProductHelp';
 
 class Help extends React.Component<any, any> {
 
@@ -14,6 +15,7 @@ class Help extends React.Component<any, any> {
     super(props);
     this.toggleGetstarted = this.toggleGetstarted.bind(this);
     this.toggleFixproblems = this.toggleFixproblems.bind(this);
+    this.toggleProduct = this.toggleProduct.bind(this);
     this.state = this.initState();
   }
 
@@ -21,7 +23,7 @@ class Help extends React.Component<any, any> {
     return (
       <div>
         <Breadcrumb>
-          <BreadcrumbItem><Link to="/">{intl.get('breadcrumb.home')}</Link></BreadcrumbItem>
+          <BreadcrumbItem><Link to="/"><FontAwesomeIcon icon={faHome} fixedWidth /></Link></BreadcrumbItem>
           <BreadcrumbItem active>{intl.get('breadcrumb.help')}</BreadcrumbItem>
         </Breadcrumb>
 
@@ -56,6 +58,17 @@ class Help extends React.Component<any, any> {
               </ListGroupItem>
             </Collapse>
 
+            <ListGroupItem id="product">
+              <Button color="link" tag={Link} to="/help#product" onClick={this.toggleProduct}>
+                {intl.get('help.product.title')}
+              </Button>
+            </ListGroupItem>
+            <Collapse isOpen={this.isProduct()}>
+              <ListGroupItem>
+                <ProductHelp />
+              </ListGroupItem>
+            </Collapse>
+
           </ListGroup>
         </Container>
       </div>
@@ -81,6 +94,10 @@ class Help extends React.Component<any, any> {
     return this.state.open === '#fixproblems';
   }
 
+  private isProduct() {
+    return this.state.open === '#product';
+  }
+
   private toggleGetstarted() {
     this.setState({
       open: (this.isGetstarted() ? undefined : '#getstarted')
@@ -90,6 +107,12 @@ class Help extends React.Component<any, any> {
   private toggleFixproblems() {
     this.setState({
       open: (this.isFixproblems() ? undefined : '#fixproblems')
+    });
+  }
+
+  private toggleProduct() {
+    this.setState({
+      open: (this.isProduct() ? undefined : '#product')
     });
   }
 }
