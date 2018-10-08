@@ -11,6 +11,10 @@
     "jsx-boolean-value": false,
     "ordered-imports": false,
     "no-console": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+
+    "interface-name": [true, "never-prefix"],
+    "no-var-requires": false
+
   }
 }

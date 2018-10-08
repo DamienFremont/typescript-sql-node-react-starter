@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as os from 'os';
 import * as winston from 'winston';
+const packageJson = require('../../../package.json');
 
 class LoggerHelper {
 
@@ -12,9 +13,9 @@ class LoggerHelper {
   }
 
   public logBanner() {
-    fs.readFile('private/banner.txt', 'utf8', (err, data) => {
+    fs.readFile('config/banner.txt', 'utf8', (err, data) => {
       this.instance.log('info', data);
-      this.instance.log('info', ` :: NodeJS ::`);
+      this.instance.log('info', ` :: NodeJS :: v${packageJson.version}`);
       this.instance.log('info', ' ');
     });
   }
