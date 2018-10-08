@@ -12,7 +12,7 @@
             "cwd": "${workspaceFolder}",
             "protocol": "inspector",
             "outFiles": [
-              "${workspaceFolder}/dist/index.js"
+              "${workspaceFolder}/dist/server/index.js"
             ]
         },
         {

@@ -3,6 +3,7 @@ import * as http from 'http';
 import App from './App';
 import LoggerHelper from './helpers/LoggerHelper';
 import EnvUtils from './utils/EnvUtils';
+import db from "./db";
 
 /**
  * Main script for server
@@ -18,11 +19,18 @@ logger.logStart();
 logger.logBanner();
 logger.logEnv();
 
-// express
-const server = http.createServer(App);
+(async () => {
 
-// serve
-server.listen(port, () => {
-  logger.logEnd();
-  logger.logHostname(port);
-})
+  // database
+  await db.sequelize.sync({ force: true });
+  
+  // express
+  const server = http.createServer(App);
+
+  // serve
+  server.listen(port, () => {
+    logger.logEnd();
+    logger.logHostname(port);
+  })
+
+})();

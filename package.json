@@ -17,7 +17,7 @@
     "reactstrap": "^6.4.0"
   },
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/server/index.js",
     "build": "concurrently --kill-others-on-fail \"react-scripts-ts build\" \"tsc -p src/server\"",
     "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node,React\" -c \"yellow.bold,cyan.bold,green.bold,blue.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run watch-node\" \"react-scripts-ts start\"",
     "watch-sass": "node-sass -w src/public/css/main.scss dist/public/css/main.css",
@@ -33,7 +33,7 @@
     "@types/dotenv": "^4.0.3",
     "@types/express": "^4.16.0",
     "@types/jest": "^23.3.2",
-    "@types/node": "^10.9.4",
+    "@types/node": "^10.11.4",
     "@types/passport": "^0.4.6",
     "@types/passport-local": "^1.0.33",
     "@types/react": "^16.4.13",
@@ -41,6 +41,7 @@
     "@types/react-intl": "^2.3.10",
     "@types/react-router-dom": "^4.3.1",
     "@types/reactstrap": "^6.0.2",
+    "@types/sequelize": "^4.27.27",
     "concurrently": "^3.5.1",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -48,6 +49,8 @@
     "nodemon": "^1.18.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "sequelize": "^4.39.0",
+    "sqlite3": "^4.0.2",
     "typescript": "^3.0.3",
     "winston": "^3.1.0"
   }

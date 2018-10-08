@@ -4,8 +4,28 @@ import * as React from 'react';
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Button, Col, Container, Row, Table } from 'reactstrap';
+import ProductItem from '../../shared/api/ProductModel';
+import ProductAPI from '../api/ProductAPI';
 
-class ProductSearch extends React.Component {
+interface ProductSearchState {
+  datas: ProductItem[];
+}
+
+class ProductSearch extends React.Component<any, ProductSearchState> {
+
+  constructor(props: any, state: ProductSearchState) {
+    super(props);
+    this.state = {
+      datas: []
+    };
+  }
+
+  public componentDidMount() {
+    ProductAPI.callApi()
+      .then(datas => this.setState({
+        datas
+      }));
+  }
 
   public render() {
     return (
@@ -46,17 +66,8 @@ class ProductSearch extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Test</td>
-                    <td>123€</td>
-                    <td>
-                      <Button color="link" tag={Link} to="/product/edit/1" >
-                        <FontAwesomeIcon icon={faChevronRight} fixedWidth />{' '}
-                        {intl.get('product.search.buttons.open')}
-                      </Button>
-                    </td>
-                  </tr>
+                  {this.state.datas.map(this.renderRow)}
+                  {!this.state.datas.length ? this.renderEmpty() : null}
                 </tbody>
               </Table>
             </Col>
@@ -65,5 +76,32 @@ class ProductSearch extends React.Component {
       </div>
     );
   }
+
+  private renderRow(value: ProductItem, index: number) {
+    return (
+      <tr>
+        <th scope="row">{value.id}</th>
+        <td>{value.name}</td>
+        <td>{value.price} €</td>
+        <td>
+          <Button color="link" tag={Link} to="/product/edit/1" >
+            <FontAwesomeIcon icon={faChevronRight} fixedWidth />{' '}
+            {intl.get('product.search.buttons.open')}
+          </Button>
+        </td>
+      </tr>
+    );
+  }
+
+  private renderEmpty() {
+    return (
+      <tr>
+        <td colSpan={4} className="text-center">
+          {intl.get('form.table.empty')}
+        </td>
+      </tr>
+    );
+  }
+
 }
 export default ProductSearch;

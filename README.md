@@ -170,7 +170,7 @@ Legend
 
 |      Feature       |              State |    Note |
 |:------------------:|-------------------:|--------:|
-|     api-client     |                :x: |         |
+|     api-client     | :heavy_check_mark: |         |
 |     api-server     | :heavy_check_mark: | Express |
 |    api-swagger     |                :x: | OpenAPI |
 |    api-version     |                :x: |         |
@@ -304,3 +304,5 @@ Legend
 
 * express ts https://mherman.org/blog/developing-a-restful-api-with-node-and-typescript/
 * express ts https://github.com/Microsoft/TypeScript-Node-Starter/blob/master/package.json
+
+* sequelize ts https://michalzalecki.com/using-sequelize-with-typescript/
