@@ -173,8 +173,8 @@ Legend
 |     api-client     | :heavy_check_mark: |         |
 |     api-server     | :heavy_check_mark: | Express |
 |    api-swagger     |                :x: | OpenAPI |
-|    api-version     |                :x: |         |
-| api-private-public |                :x: |         |
+|    api-version     | :heavy_check_mark: |         |
+| api-private-public | :heavy_check_mark: |         |
 
 ## Service
 

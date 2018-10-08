@@ -77,3 +77,4 @@ jspm_packages/
 
 # Custom Project
 !examples/.env.development.local
+memory
