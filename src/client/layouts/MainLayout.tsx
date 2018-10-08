@@ -8,11 +8,11 @@ import AppNavbar from '../components/app/AppNavbar';
 import AppSidebar from '../components/app/AppSidebar';
 import './MainLayout.css';
 
-interface IMainLayoutProps {
+interface MainLayoutProps {
   logo: any;
 }
 
-class MainLayout extends React.Component<IMainLayoutProps, any> {
+class MainLayout extends React.Component<MainLayoutProps, any> {
 
   public render() {
     return (

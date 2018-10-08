@@ -7,20 +7,20 @@ import App from '../../App';
 import AppLocaleSelector from './AppLocaleSelector';
 
 
-interface IAppNavbarState {
+interface AppNavbarState {
     isOpen: boolean;
 }
 
-interface IAppNavbarProps {
+interface AppNavbarProps {
     logo: any;
 }
 
 /**
  * @see https://reactstrap.github.io/components/navbar/
  */
-class AppNavbar extends React.Component<IAppNavbarProps, IAppNavbarState> {
+class AppNavbar extends React.Component<AppNavbarProps, AppNavbarState> {
 
-    constructor(props: IAppNavbarProps) {
+    constructor(props: AppNavbarProps) {
         super(props);
         this.toggle = this.toggle.bind(this);
         this.state = {

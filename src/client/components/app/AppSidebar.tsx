@@ -5,7 +5,7 @@ import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Nav, NavLink } from 'reactstrap';
 
-interface IAppSidebarProps {
+interface AppSidebarProps {
   className: string;
 }
 
@@ -13,9 +13,9 @@ interface IAppSidebarProps {
  * @see https://reactstrap.github.io/components/navs/
  * @see https://goshakkk.name/different-mobile-desktop-tablet-layouts-react/
  */
-class AppSidebar extends React.Component<IAppSidebarProps, any> {
+class AppSidebar extends React.Component<AppSidebarProps, any> {
 
-  constructor(props: IAppSidebarProps) {
+  constructor(props: AppSidebarProps) {
     super(props);
     this.state = {
       width: window.innerWidth,

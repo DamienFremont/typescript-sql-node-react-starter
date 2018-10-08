@@ -13,11 +13,11 @@ import Help from './pages/Help';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
-interface IAppState {
+interface AppState {
   initDone?: boolean;
 }
 
-class App extends React.Component<any, IAppState> {
+class App extends React.Component<any, AppState> {
 
   public static LOCALES = [
     { name: "English", value: "en-US" },

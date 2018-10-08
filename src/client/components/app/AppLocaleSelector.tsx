@@ -4,11 +4,11 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from
 import Button from 'reactstrap/lib/Button';
 import './AppLocaleSelector.css';
 
-interface IAppLocaleSelectorProps {
-    locales: INameValue[];
+interface AppLocaleSelectorProps {
+    locales: NameValue[];
 }
 
-interface INameValue {
+interface NameValue {
     name: string;
     value: string;
 }
@@ -16,7 +16,7 @@ interface INameValue {
 /**
  * @see https://github.com/alibaba/react-intl-universal/blob/master/examples/browser-example/
  */
-class AppLocaleSelector extends React.Component<IAppLocaleSelectorProps, any> {
+class AppLocaleSelector extends React.Component<AppLocaleSelectorProps, any> {
     
     public render() {
         return (
@@ -34,7 +34,7 @@ class AppLocaleSelector extends React.Component<IAppLocaleSelectorProps, any> {
     /**
      *  @see https://www.flaticon.com/packs/countrys-flags
      */
-    private renderItem(value: INameValue, index: any) {
+    private renderItem(value: NameValue, index: any) {
         const url = "/?lang=" + value.value;
         const imgSrc = "/locales/" + value.value + ".png";
         return (

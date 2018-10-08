@@ -10,11 +10,11 @@ import { Button } from 'reactstrap';
 import HelloAPI from '../api/HelloAPI';
 import img from '../logo.svg';
 
-interface IHomeState {
+interface HomeState {
   response: string;
 }
 
-class Home extends React.Component<any, IHomeState> {
+class Home extends React.Component<any, HomeState> {
 
   constructor(props: any) {
     super(props);

@@ -1,3 +1,3 @@
-export default interface IHelloResponse {
+export default interface HelloResponse {
     express: string;
 }

@@ -1,14 +1,14 @@
 import * as React from 'react';
 import './StickyFooter.css';
 
-interface IStickyFooterProps {
+interface StickyFooterProps {
     className: string;
 }
 
 /**
  * @see https://getbootstrap.com/docs/4.1/examples/sticky-footer/
  */
-export class StickyFooter extends React.Component<IStickyFooterProps, any> {
+export class StickyFooter extends React.Component<StickyFooterProps, any> {
 
     public render() {
         return (
