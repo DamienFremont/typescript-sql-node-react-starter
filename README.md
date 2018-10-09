@@ -168,13 +168,15 @@ Legend
 
 ## API
 
-|      Feature       |              State |    Note |
-|:------------------:|-------------------:|--------:|
-|     api-client     | :heavy_check_mark: |         |
-|     api-server     | :heavy_check_mark: | Express |
-|    api-swagger     |                :x: | OpenAPI |
-|    api-version     | :heavy_check_mark: |         |
-| api-private-public | :heavy_check_mark: |         |
+![alt text](docs/README-feature-api.png)
+
+|      Feature       |              State |                  Note |
+|:------------------:|-------------------:|----------------------:|
+|     api-client     | :heavy_check_mark: |                       |
+|     api-server     | :heavy_check_mark: |               Express |
+|    api-swagger     | :heavy_check_mark: | OpenAPI, design-first |
+|    api-version     | :heavy_check_mark: |           version URL |
+| api-private-public | :heavy_check_mark: |                       |
 
 ## Service
 
@@ -306,3 +308,6 @@ Legend
 * express ts https://github.com/Microsoft/TypeScript-Node-Starter/blob/master/package.json
 
 * sequelize ts https://michalzalecki.com/using-sequelize-with-typescript/
+
+* swagger express https://blog.cloudboost.io/adding-swagger-to-existing-node-js-project-92a6624b855b
+* swagger ts https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/swagger-ui-express/swagger-ui-express-tests.ts
