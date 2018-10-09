@@ -1,16 +1,17 @@
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
-import { api } from './api/api';
-// import { staticsRouter } from './routes/staticsRouter';
+import { api, apiDocs } from './api/api';
+import { staticsRouter } from './routes/staticsRouter';
 
 // import * as logger from 'morgan';
 
 // Creates and configures an ExpressJS web server.
 class App {
-  // private root = '../../';
 
   // ref to Express instance
   public express: express.Application;
+
+  private root = '../../../';
 
   // Run configuration methods on the Express instance. 
   public constructor() {
@@ -24,7 +25,9 @@ class App {
     // this.express.use(logger('dev'));
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: false }));
-    // this.express.use(staticsRouter(this.root));
+    if (process.env.NODE_ENV === 'production') {
+      this.express.use(staticsRouter(this.root));
+    }
   }
 
   // Configure API endpoints.
@@ -37,6 +40,7 @@ class App {
 
     // api router
     router.use('/api', api());
+    router.use('/api-docs', apiDocs());
 
     this.express.use('/', router);
   }
