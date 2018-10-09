@@ -216,26 +216,26 @@ Legend
 
 ## Form
 
-|     Feature     | State | Note |
-|:---------------:|------:|-----:|
-|  form-edition   |   :x: |      |
-|  form-toolbar   |   :x: |      |
-|  form-exemple   |   :x: |      |
-| form-validation |   :x: |      |
-|   date-picker   |   :x: |      |
-| data-validation |   :x: |  AJV |
+|     Feature     |              State | Note |
+|:---------------:|-------------------:|-----:|
+|  form-edition   | :heavy_check_mark: |      |
+|  form-toolbar   |                :x: |      |
+|  form-exemple   |                :x: |      |
+| form-validation |                :x: |      |
+|   date-picker   |                :x: |      |
+| data-validation |                :x: |  AJV |
 
 ## Data-Table  
 
-|     Feature      | State | Note |
-|:----------------:|------:|-----:|
-|      table       |   :x: |      |
-|   table-modal    |   :x: |      |
-|    table-sort    |   :x: |      |
-| table-filtering  |   :x: |      |
-| table-pagination |   :x: |      |
-|   table-export   |   :x: |      |
-| table-expand-row |   :x: |      |
+|     Feature      |              State | Note |
+|:----------------:|-------------------:|-----:|
+|      table       | :heavy_check_mark: |      |
+|   table-modal    |                :x: |      |
+|    table-sort    |                :x: |      |
+| table-filtering  |                :x: |      |
+| table-pagination |                :x: |      |
+|   table-export   |                :x: |      |
+| table-expand-row |                :x: |      |
 
 ## Tests
 
