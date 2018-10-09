@@ -1,11 +1,12 @@
-import { faChevronRight, faHome, faPlus, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faChevronRight, faHome, faPlus, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem, Button, Col, Container, Row, Table } from 'reactstrap';
-import ProductItem from '../../shared/api/ProductModel';
+import { Badge, Breadcrumb, BreadcrumbItem, Button, Col, Container, Row, Table } from 'reactstrap';
+
 import ProductAPI from '../api/ProductAPI';
+import { ProductItem } from '../../shared/api/ProductModel';
 
 interface ProductSearchState {
   datas: ProductItem[];
@@ -21,7 +22,7 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
   }
 
   public componentDidMount() {
-    ProductAPI.callApi()
+    ProductAPI.findAll()
       .then(datas => this.setState({
         datas
       }));
@@ -31,7 +32,8 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
     return (
       <div>
         <div className="bg-info clearfix px-4 py-2">
-          <h1 className="text-white">{intl.get('product.search.title')}</h1>
+          <h1 className="text-white">{intl.get('product.search.title')}{' '}
+            <FontAwesomeIcon icon={faBoxOpen} fixedWidth /></h1>
           <p className="text-white ml-1">{intl.get('product.search.description')}</p>
         </div>
         <Breadcrumb>
@@ -61,6 +63,7 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
                   <tr>
                     <th>#</th>
                     <th>{intl.get('product.search.table.columns.name')}</th>
+                    <th>{intl.get('product.search.table.columns.type')}</th>
                     <th>{intl.get('product.search.table.columns.price')}</th>
                     <th>{''}</th>
                   </tr>
@@ -82,9 +85,10 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
       <tr>
         <th scope="row">{value.id}</th>
         <td>{value.name}</td>
+        <td>{value.type}</td>
         <td>{value.price} €</td>
         <td>
-          <Button color="link" tag={Link} to="/product/edit/1" >
+          <Button color="link" tag={Link} to={"/product/edit/" + value.id} >
             <FontAwesomeIcon icon={faChevronRight} fixedWidth />{' '}
             {intl.get('product.search.buttons.open')}
           </Button>
@@ -97,7 +101,7 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
     return (
       <tr>
         <td colSpan={4} className="text-center">
-          {intl.get('form.table.empty')}
+          <Badge color="info" pill>{intl.get('form.empty')}</Badge>
         </td>
       </tr>
     );

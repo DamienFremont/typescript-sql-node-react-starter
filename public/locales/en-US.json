@@ -4,7 +4,9 @@
     "footer.contact": "Contact",
     "footer.copyright": "Terms",
     "footer.help": "Help",
-    "form.table.empty": "No results.",
+    "form.submit": "Submit",
+    "form.cancel": "Undo",
+    "form.empty": "No results.",
     "nav.help": "Help",
     "nav.about": "About",
     "nav.productCreate": "Add new product",
@@ -40,6 +42,12 @@
     "product.search.description": "Here you can search a product!",
     "product.search.buttons.create": "Create Product",
     "product.search.table.columns.name": "Name",
+    "product.search.table.columns.type": "Type",
     "product.search.table.columns.price": "Price",
-    "product.form.title": "Edit Product"
+    "product.form.title": "Edit Product",
+    "product.form.fields.name.label": "Name",
+    "product.form.fields.name.placeholder": "ex: 'My ProductName'",
+    "product.form.fields.type.label": "Type",
+    "product.form.fields.price.label": "Price",
+    "product.form.fields.price.placeholder": "ex: '123.45'"
 }

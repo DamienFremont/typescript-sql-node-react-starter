@@ -188,15 +188,15 @@ Legend
 
 ## Data
 
-|      Feature      | State |                  Note |
-|:-----------------:|------:|----------------------:|
-|   file-download   |   :x: |                       |
-|    file-upload    |   :x: | browse, drop, preview |
-|    data-schema    |   :x: |                       |
-|   data-dataset    |   :x: |                       |
-|   data-orm-crud   |   :x: |                       |
-| data-orm-paginate |   :x: |                       |
-|  data-orm-search  |   :x: |                       |
+|      Feature      |              State |                  Note |
+|:-----------------:|-------------------:|----------------------:|
+|   file-download   |                :x: |                       |
+|    file-upload    |                :x: | browse, drop, preview |
+|    data-schema    | :heavy_check_mark: |                       |
+|   data-dataset    |                :x: |                       |
+|   data-orm-crud   |                :x: |                       |
+| data-orm-paginate |                :x: |                       |
+|  data-orm-search  |                :x: |                       |
 
 ## Entity
 
