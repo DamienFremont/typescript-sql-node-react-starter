@@ -7,6 +7,7 @@
     "form.submit": "Confirmer",
     "form.cancel": "Annuler",
     "form.empty": "Aucun résultat.",
+    "form.open": "Ouvrir",
     "nav.help": "Aide",
     "nav.about": "À propos",
     "nav.productCreate": "Ajouter un produit",
@@ -49,5 +50,6 @@
     "product.form.fields.name.placeholder": "ex: 'My ProductName'",
     "product.form.fields.type.label": "Type",
     "product.form.fields.price.label": "Prix",
-    "product.form.fields.price.placeholder": "ex: '123.45'"
+    "product.form.fields.price.placeholder": "ex: '123.45'",
+    "paginator.itemsPerPageLabel": "Items par pages"
 }

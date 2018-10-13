@@ -24,10 +24,16 @@ logger.logEnv();
   // database
   await db.sequelize.sync({ force: true });
 
-  db.Product.create({ id: '1', name: 'Un', type: 'FOOD', price: 42.00 });
-  db.Product.create({ id: '2', name: 'Deux', type: 'FOOD', price: 42.00 });
-  db.Product.create({ id: '3', name: 'Trois', type: 'TOY', price: 42.00 });
-  
+  for (let index = 0; index < 40; index++) {
+    db.Product.create({
+      id: index.toString(),
+      name: `Un${index}`,
+      type: `FOOD${index}`,
+      price: (42 + index)
+    });
+  }
+
+
   // express
   const server = http.createServer(App);
 

@@ -197,7 +197,7 @@ Legend
 |    data-schema    | :heavy_check_mark: |                       |
 |   data-dataset    |                :x: |                       |
 |   data-orm-crud   |                :x: |                       |
-| data-orm-paginate |                :x: |                       |
+| data-orm-paginate | :heavy_check_mark: |                       |
 |  data-orm-search  |                :x: |                       |
 
 ## Entity
@@ -235,7 +235,7 @@ Legend
 |   table-modal    |                :x: |      |
 |    table-sort    |                :x: |      |
 | table-filtering  |                :x: |      |
-| table-pagination |                :x: |      |
+| table-pagination | :heavy_check_mark: |      |
 |   table-export   |                :x: |      |
 | table-expand-row |                :x: |      |
 
@@ -311,3 +311,5 @@ Legend
 
 * swagger express https://blog.cloudboost.io/adding-swagger-to-existing-node-js-project-92a6624b855b
 * swagger ts https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/swagger-ui-express/swagger-ui-express-tests.ts
+
+* datatable UI https://react-bootstrap-table.github.io/react-bootstrap-table2/

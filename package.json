@@ -9,6 +9,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.1.2",
     "react": "^16.3.2",
+    "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.3.2",
     "react-intl": "^2.4.0",
     "react-intl-universal": "^1.13.1",
@@ -42,6 +43,8 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/reactstrap": "^6.0.2",
     "@types/sequelize": "^4.27.27",
+    "@types/swagger-ui-express": "^3.0.0",
+    "@types/react-bootstrap-table": "^4.3.5",
     "concurrently": "^3.5.1",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -53,7 +56,6 @@
     "sqlite3": "^4.0.2",
     "typescript": "^3.0.3",
     "winston": "^3.1.0",
-    "swagger-ui-express": "^4.0.1",
-    "@types/swagger-ui-express": "^3.0.0"
+    "swagger-ui-express": "^4.0.1"
   }
 }
