@@ -8,22 +8,27 @@ import { Button } from 'reactstrap';
 
 import { ProductItem } from '../../../shared/api/ProductModel';
 
-
 interface ProductTableProps {
-    onPageChange: ((page: number, sizePerPage: number) => void);
     datas: ProductItem[];
-    sizePerPage: number
     dataTotalSize: number
-    currentPage?: number
+    fetchDatas: ((page: number, sizePerPage: number) => void);
 }
 
-class ProductTable extends React.Component<ProductTableProps, any> {
+interface ProductTableState {
+    currentPage: number
+    sizePerPage: number
+}
+
+class ProductTable extends React.Component<ProductTableProps, ProductTableState> {
 
     constructor(props: ProductTableProps, state: any) {
         super(props);
-        this.state = {};
+        this.state = {
+            currentPage: 1,
+            sizePerPage: 5,
+        };
     }
-    
+
     public render() {
         return (
             <BootstrapTable
@@ -44,7 +49,7 @@ class ProductTable extends React.Component<ProductTableProps, any> {
 
     private options(): Options {
         return {
-            page: this.props.currentPage || 1,
+            page: this.state.currentPage,
             sizePerPageList: [{
                 text: '5', value: 5
             }, {
@@ -52,9 +57,9 @@ class ProductTable extends React.Component<ProductTableProps, any> {
             }, {
                 text: 'All', value: 100
             }],
-            sizePerPage: this.props.sizePerPage || 5,
+            sizePerPage: this.state.sizePerPage,
             paginationShowsTotal: true,
-            onPageChange: this.props.onPageChange
+            onPageChange: this.onPageChange()
         };
     }
 
@@ -81,5 +86,11 @@ class ProductTable extends React.Component<ProductTableProps, any> {
         );
     }
 
+    private onPageChange() {
+        const ref = this; // FIXME: losing this reference after BootstrapTable
+        return (currentPage: number, sizePerPage: number) => {
+            ref.props.fetchDatas(currentPage, sizePerPage);
+        };
+    }
 }
 export default ProductTable;

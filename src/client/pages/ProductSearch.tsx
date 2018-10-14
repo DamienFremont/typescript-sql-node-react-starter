@@ -18,8 +18,6 @@ interface ProductSearchState {
 
 class ProductSearch extends React.Component<any, ProductSearchState> {
 
-  private table: ProductTable;
-
   constructor(props: any, state: ProductSearchState) {
     super(props);
     this.state = {
@@ -31,7 +29,7 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
   }
 
   public componentDidMount() {
-    this.fetchDatas(this.state.currentPage, this.state.sizePerPage);
+    this.fetchDatas()(this.state.currentPage, this.state.sizePerPage);
   }
 
   public render() {
@@ -84,36 +82,26 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
   private renderTable() {
     return (
       <ProductTable
-        ref={(table: ProductTable) => this.table = table}
         datas={this.state.datas}
-        sizePerPage={this.state.sizePerPage}
         dataTotalSize={this.state.dataTotalSize}
-        currentPage={this.state.currentPage}
-        onPageChange={this.onPageChange()} />
+        fetchDatas={this.fetchDatas()} />
     );
   }
 
-  private fetchDatas(currentPage: number, sizePerPage: number) {
-    ProductAPI.findAll({
-      page: currentPage,
-      size: sizePerPage
-    })
-      .then((response: FindAllResponse) => {
-        this.setState({
-          datas: response.products,
-          dataTotalSize: response.page.totalElements,
-          currentPage,
-          sizePerPage
-        });
-      });
-  }
-
-  private onPageChange() {
-    const ref = this;
+  private fetchDatas() {
+    const ref = this; // FIXME: losing this reference after BootstrapTable
     return (currentPage: number, sizePerPage: number) => {
-      ref.fetchDatas(currentPage, sizePerPage);
-    };
+      ProductAPI.findAll({
+        page: currentPage,
+        size: sizePerPage
+      })
+        .then((response: FindAllResponse) => {
+          ref.setState({
+            datas: response.products,
+            dataTotalSize: response.page.totalElements
+          });
+        });
+    }
   }
-
 }
 export default ProductSearch;
