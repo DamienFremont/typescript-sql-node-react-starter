@@ -24,7 +24,7 @@ logger.logEnv();
   // database
   await db.sequelize.sync({ force: true });
 
-  for (let index = 0; index < 40; index++) {
+  for (let index = 1; index < 40; index++) {
     db.Product.create({
       id: index.toString(),
       name: `Un${index}`,

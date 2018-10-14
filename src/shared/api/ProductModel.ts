@@ -15,9 +15,14 @@ export interface ProductItem {
     type?: string;
 }
 
-export interface FindParams {
+export interface FindAllParams {
     page?: number;
     size?: number;
+}
+
+export interface FindAllResponse {
+    products: ProductItem[];
+    page: PageResponse;
 }
 
 export interface PageResponse {
@@ -25,9 +30,4 @@ export interface PageResponse {
     totalElements: number;
     totalPages: number;
     number: number;
-}
-
-export interface FindAllResponse {
-    products: ProductItem[];
-    page: PageResponse;
 }

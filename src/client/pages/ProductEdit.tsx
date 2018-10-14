@@ -2,7 +2,7 @@ import { faBoxOpen, faHome, faQuestionCircle } from '@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Col, Container, Row, Progress } from 'reactstrap';
 import Button from 'reactstrap/lib/Button';
 
@@ -12,27 +12,32 @@ import ProductForm from '../components/product/ProductForm';
 
 interface ProductEditState {
   data: ProductAttributes;
+  id: string;
+  toSearch?: boolean
 }
 
 class ProductEdit extends React.Component<any, ProductEditState> {
 
-  private productForm: ProductForm;
-
   constructor(props: any, state: ProductEditState) {
     super(props);
     this.state = {
-      data: {}
+      data: {},
+      id: this.props.match.params.id
     };
   }
 
   public componentDidMount() {
-    ProductAPI.findOne(this.props.match.params.id).then(data => {
-      this.setState({ data });
-      this.productForm.handleDataChange(data);
+    ProductAPI.findOne(this.state.id).then(data => {
+      this.setState({
+        data
+      });
     });
   }
 
   public render() {
+    if (this.state.toSearch === true) {
+      return <Redirect to='/product/search' />
+    }
     return (
       <div>
         <div className="bg-info clearfix px-4 py-2">
@@ -57,11 +62,10 @@ class ProductEdit extends React.Component<any, ProductEditState> {
           </Row>
           <Row>
             <Col sm={{ size: 11, offset: 1 }}>
-
               {this.state.data.id ?
                 <ProductForm
-                  ref={(me: ProductForm) => { this.productForm = me }}
-                  data={this.state.data} onSave={this.handleSave} />
+                  data={this.state.data}
+                  onSubmit={this.handleSave()} />
                 :
                 <Progress animated value={2 * 5} />
               }
@@ -73,9 +77,14 @@ class ProductEdit extends React.Component<any, ProductEditState> {
   }
 
   private handleSave() {
-    ProductAPI.save(this.state.data)
-      .then(result => this.props
-        .history.push("/product/search"));
+    const ref = this;
+    return (data: ProductAttributes) => {
+      ProductAPI.update(data).then(result => {
+        ref.setState({
+          toSearch: true
+        });
+      });
+    };
   }
 }
 export default ProductEdit;

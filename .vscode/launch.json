@@ -6,6 +6,12 @@
     "configurations": [
         {
             "type": "node",
+            "request": "attach",
+            "name": "Attach Node by Process ID",
+            "processId": "${command:PickProcess}"
+        },
+        {
+            "type": "node",
             "request": "launch",
             "name": "Launch Node + TS support",
             "program": "${workspaceFolder}/src/server/index.ts",

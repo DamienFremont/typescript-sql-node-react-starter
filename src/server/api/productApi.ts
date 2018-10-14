@@ -1,19 +1,19 @@
 import { Router } from 'express';
+import { FindOptions, UpdateOptions } from 'sequelize';
 
-import { ProductItem, FindAllResponse, FindParams, PageResponse } from '../../shared/api/ProductModel';
+import ProductAttributes, { FindAllParams, FindAllResponse, PageResponse, ProductItem } from '../../shared/api/ProductModel';
 import db from '../db';
-import { FindOptions } from 'sequelize';
 
 export function productApi(): Router {
     const api = Router();
 
-    const defaultLimit = 100;
+    const DEF_LIMIT = 100;
 
     api.get('/', (req, res) => {
-        const query = req.query as FindParams;
+        const query = req.query as FindAllParams;
         const options = {
             offset: ((query.page && query.size) ? ((query.page - 1) * query.size) : 0),
-            limit: (query.size ? query.size : defaultLimit)
+            limit: (query.size ? query.size : DEF_LIMIT)
         } as FindOptions<ProductItem>;
         Promise.all([
             db.Product.count(),
@@ -34,25 +34,27 @@ export function productApi(): Router {
     });
 
     api.get('/:id', (req, res) => {
-        db.Product
-            .findById(req.params.id)
-            .then((result) => {
-                res.json(result);
-            });
+        db.Product.findById(req.params.id).then((result) => {
+            res.json(result);
+        });
     });
 
     api.post('/', (req, res) => {
-        db.Product
-            .create(req.body)
-            .then(() => res
-                .redirect('/'))
+        db.Product.create(req.body).then((result: ProductAttributes) => {
+            res.json(result);
+        });
     });
 
     api.put('/:id', (req, res) => {
-        db.Product
-            .update(req.body)
-            .then(() => res
-                .redirect('/'))
+        db.Product.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        } as UpdateOptions).then((result: any[]) => {
+            res.json({
+                affectedRows: result[0]
+            });
+        });
     });
 
     return api;

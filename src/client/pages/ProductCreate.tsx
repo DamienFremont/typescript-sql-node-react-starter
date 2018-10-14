@@ -2,7 +2,7 @@ import { faBoxOpen, faHome, faQuestionCircle } from '@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Col, Container, Row } from 'reactstrap';
 import Button from 'reactstrap/lib/Button';
 
@@ -12,6 +12,7 @@ import ProductForm from '../components/product/ProductForm';
 
 interface ProductCreateState {
   data: ProductAttributes;
+  toSearch?: boolean
 }
 
 class ProductCreate extends React.Component<any, ProductCreateState> {
@@ -28,6 +29,9 @@ class ProductCreate extends React.Component<any, ProductCreateState> {
   }
 
   public render() {
+    if (this.state.toSearch === true) {
+      return <Redirect to='/product' />
+    }
     return (
       <div>
         <div className="bg-info clearfix px-4 py-2">
@@ -52,7 +56,9 @@ class ProductCreate extends React.Component<any, ProductCreateState> {
           </Row>
           <Row>
             <Col sm={{ size: 11, offset: 1 }}>
-              <ProductForm data={this.state.data} onSave={this.handleSave} />
+              <ProductForm
+                data={this.state.data}
+                onSubmit={this.handleSave()} />
             </Col>
           </Row>
         </Container>
@@ -61,9 +67,12 @@ class ProductCreate extends React.Component<any, ProductCreateState> {
   }
 
   private handleSave() {
-    ProductAPI.save(this.state.data)
-      .then(result => this.props
-        .history.push("/product/search"));
+    const ref = this;
+    return (data: ProductAttributes) => {
+      ProductAPI.create(data).then(result => {
+        ref.props.history.push("/product/search");
+      });
+    };
   }
 
 

@@ -1,10 +1,10 @@
 import axios, { AxiosResponse } from 'axios';
 
-import ProductAttributes, { FindAllResponse, FindParams } from '../../shared/api/ProductModel';
+import ProductAttributes, { FindAllResponse, FindAllParams } from '../../shared/api/ProductModel';
 
 class ProductAPI {
 
-  public static async findAll(params: FindParams): Promise<FindAllResponse> {
+  public static async findAll(params: FindAllParams): Promise<FindAllResponse> {
     const esc = encodeURIComponent;
     const query = Object.keys(params)
       .map(k => esc(k) + '=' + esc(params[k]))
@@ -27,8 +27,18 @@ class ProductAPI {
       })
   };
 
-  public static async save(persisted: ProductAttributes): Promise<boolean> {
+  public static async create(persisted: ProductAttributes): Promise<boolean> {
     return axios.post('/api/products', persisted)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  public static async update(persisted: ProductAttributes): Promise<boolean> {
+    return axios.put(`/api/products/${persisted.id}`, persisted)
       .then((response) => {
         return response.data;
       })
