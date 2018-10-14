@@ -28,7 +28,7 @@ logger.logEnv();
     db.Product.create({
       id: index.toString(),
       name: `Un${index}`,
-      type: `FOOD${index}`,
+      type: `FOOD`,
       price: (42 + index)
     });
   }

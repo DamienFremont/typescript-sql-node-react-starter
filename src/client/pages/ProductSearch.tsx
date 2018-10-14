@@ -1,32 +1,37 @@
-import { faBoxOpen, faChevronRight, faHome, faPlus, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faHome, faPlus, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
-import { BootstrapTable, Options, TableHeaderColumn } from 'react-bootstrap-table';
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Badge, Breadcrumb, BreadcrumbItem, Button, Col, Container, Row } from 'reactstrap';
 
-import { ProductItem } from '../../shared/api/ProductModel';
+import { FindAllResponse, ProductItem } from '../../shared/api/ProductModel';
 import ProductAPI from '../api/ProductAPI';
+import ProductTable from '../components/product/ProductTable';
 
 interface ProductSearchState {
-  datas: ProductItem[];
+  datas: ProductItem[]
+  dataTotalSize: number
+  sizePerPage: number
+  currentPage: number
 }
 
 class ProductSearch extends React.Component<any, ProductSearchState> {
 
+  private table: ProductTable;
+
   constructor(props: any, state: ProductSearchState) {
     super(props);
     this.state = {
-      datas: []
+      datas: [],
+      dataTotalSize: 0,
+      currentPage: 1,
+      sizePerPage: 5
     };
   }
 
   public componentDidMount() {
-    ProductAPI.findAll()
-      .then(datas => this.setState({
-        datas
-      }));
+    this.fetchDatas(this.state.currentPage, this.state.sizePerPage);
   }
 
   public render() {
@@ -59,53 +64,12 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
           </Row>
           <Row>
             <Col>
-              {this.state.datas.length ? this.renderTable() : null}
-              {!this.state.datas.length ? this.renderEmpty() : null}
+              {!this.state.dataTotalSize ? this.renderEmpty() : null}
+              {this.state.dataTotalSize ? this.renderTable() : null}
             </Col>
           </Row>
         </Container>
       </div>
-    );
-  }
-
-  private renderTable() {
-    const options = {
-      page: 1,  // which page you want to show as default
-      sizePerPageList: [{
-        text: '5', value: 5
-      }, {
-        text: '10', value: 10
-      }, {
-        text: 'All', value: 100
-      }], // you can change the dropdown list for size per page
-      sizePerPage: 10,  // which size per page you want to locate as default
-      pageStartIndex: 0, // where to start counting the pages
-      prePage: 'Prev', // Previous page button text
-      nextPage: 'Next', // Next page button text
-      firstPage: 'First', // First page button text
-      lastPage: 'Last' // Last page button text
-    } as Options;
-    return (
-      <BootstrapTable
-        version="4"
-        data={this.state.datas}
-        pagination={true}
-        options={options}>
-        <TableHeaderColumn dataField='id' isKey>#</TableHeaderColumn>
-        <TableHeaderColumn dataField='name'>{intl.get('product.search.table.columns.name')}</TableHeaderColumn>
-        <TableHeaderColumn dataField='type'>{intl.get('product.search.table.columns.type')}</TableHeaderColumn>
-        <TableHeaderColumn dataField='price'>{intl.get('product.search.table.columns.price')}</TableHeaderColumn>
-        <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter}>Buttons</TableHeaderColumn>
-      </BootstrapTable>
-    );
-  }
-
-  private buttonFormatter(cell: any, row: ProductItem) {
-    return (
-      <Button color="secondary" tag={Link} to={"/product/edit/" + row.id} >
-        <FontAwesomeIcon icon={faChevronRight} fixedWidth />{' '}
-        {intl.get('form.open')}
-      </Button>
     );
   }
 
@@ -115,6 +79,40 @@ class ProductSearch extends React.Component<any, ProductSearchState> {
         <Badge color="info" pill>{intl.get('form.empty')}</Badge>
       </div>
     );
+  }
+
+  private renderTable() {
+    return (
+      <ProductTable
+        ref={(table: ProductTable) => this.table = table}
+        datas={this.state.datas}
+        sizePerPage={this.state.sizePerPage}
+        dataTotalSize={this.state.dataTotalSize}
+        currentPage={this.state.currentPage}
+        onPageChange={this.onPageChange()} />
+    );
+  }
+
+  private fetchDatas(currentPage: number, sizePerPage: number) {
+    ProductAPI.findAll({
+      page: currentPage,
+      size: sizePerPage
+    })
+      .then((response: FindAllResponse) => {
+        this.setState({
+          datas: response.products,
+          dataTotalSize: response.page.totalElements,
+          currentPage,
+          sizePerPage
+        });
+      });
+  }
+
+  private onPageChange() {
+    const ref = this;
+    return (currentPage: number, sizePerPage: number) => {
+      ref.fetchDatas(currentPage, sizePerPage);
+    };
   }
 
 }

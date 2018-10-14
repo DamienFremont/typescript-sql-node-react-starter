@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { ProductItem } from '../../shared/api/ProductModel';
+import { ProductItem, FindAllResponse, FindParams, PageResponse } from '../../shared/api/ProductModel';
 import db from '../db';
 import { FindOptions } from 'sequelize';
 
@@ -10,17 +10,27 @@ export function productApi(): Router {
     const defaultLimit = 100;
 
     api.get('/', (req, res) => {
-        const page = req.query.page;
-        const size = req.query.size;
+        const query = req.query as FindParams;
         const options = {
-            offset: (page ? ((req.query.page - 1) * req.query.size) : 0),
-            limit: (size ? req.query.size : defaultLimit)
+            offset: ((query.page && query.size) ? ((query.page - 1) * query.size) : 0),
+            limit: (query.size ? query.size : defaultLimit)
         } as FindOptions<ProductItem>;
-        db.Product
-            .findAll(options)
-            .then((result: ProductItem[]) => {
-                res.json(result);
-            });
+        Promise.all([
+            db.Product.count(),
+            db.Product.findAll(options)
+        ]).then((values) => {
+            const count = values[0] as number;
+            const result = values[1] as ProductItem[];
+            res.json({
+                products: result,
+                page: ((query.page && query.size) ? {
+                    size: query.size,
+                    totalElements: count,
+                    totalPages: (count / query.size),
+                    number: query.page
+                } as PageResponse : null)
+            } as FindAllResponse);
+        });
     });
 
     api.get('/:id', (req, res) => {

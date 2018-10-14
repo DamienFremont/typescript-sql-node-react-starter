@@ -1,11 +1,15 @@
-import ProductItem from '../../shared/api/ProductModel';
-import ProductAttributes from '../../shared/api/ProductModel';
 import axios, { AxiosResponse } from 'axios';
+
+import ProductAttributes, { FindAllResponse, FindParams } from '../../shared/api/ProductModel';
 
 class ProductAPI {
 
-  public static async findAll(): Promise<ProductItem[]> {
-    const response = await fetch('/api/products?page=1&size=5');
+  public static async findAll(params: FindParams): Promise<FindAllResponse> {
+    const esc = encodeURIComponent;
+    const query = Object.keys(params)
+      .map(k => esc(k) + '=' + esc(params[k]))
+      .join('&');
+    const response = await fetch('/api/products?' + query);
     const body = await response.json();
     if (response.status !== 200) {
       throw Error(body.message);

@@ -14,3 +14,20 @@ export interface ProductItem {
     price?: number;
     type?: string;
 }
+
+export interface FindParams {
+    page?: number;
+    size?: number;
+}
+
+export interface PageResponse {
+    size: number;
+    totalElements: number;
+    totalPages: number;
+    number: number;
+}
+
+export interface FindAllResponse {
+    products: ProductItem[];
+    page: PageResponse;
+}
