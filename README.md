@@ -143,29 +143,6 @@ Legend
 |       layout-help       | :heavy_check_mark: |          general and pages |
 |       layout-urls       | :heavy_check_mark: |             SSR, CSR perfs |
 
-## Accessibility
-
-|      Feature      |              State | Note |
-|:-----------------:|-------------------:|-----:|
-| access-breadcrumb | :heavy_check_mark: |      |
-|    access-size    | :heavy_check_mark: |   em |
-| access-wcag-aria  |                :x: |      |
-|  access-offline   |                :x: |      |
-
-## Security
-
-|    Feature    | State |          Note |
-|:-------------:|------:|--------------:|
-|  auth-local   |   :x: |     HTML form |
-|  auth-openid  |   :x: |        OpenID |
-|    auth-ad    |   :x: |          SAML |
-|   secu-role   |   :x: |               |
-|  secu-right   |   :x: |               |
-|   secu-page   |   :x: |               |
-|  secu-routes  |   :x: |               |
-| user-settings |   :x: | local, remote |
-|  user-profil  |   :x: |        remote |
-
 ## API
 
 ![alt text](docs/README-feature-api.png)
@@ -177,6 +154,30 @@ Legend
 |    api-swagger     | :heavy_check_mark: | OpenAPI, design-first |
 |    api-version     | :heavy_check_mark: |           version URL |
 | api-private-public | :heavy_check_mark: |                       |
+
+## Form
+
+![alt text](docs/README-feature-form.png)
+
+|     Feature     |              State | Note |
+|:---------------:|-------------------:|-----:|
+|  form-edition   | :heavy_check_mark: |      |
+|  form-toolbar   |                :x: |      |
+| form-validation |                :x: |  AJV |
+|   date-picker   |                :x: |      |
+
+## Data-Table  
+
+![alt text](docs/README-feature-table.png)
+
+|     Feature      |              State | Note |
+|:----------------:|-------------------:|-----:|
+|      table       | :heavy_check_mark: |      |
+|    table-sort    |                :x: |      |
+| table-filtering  |                :x: |      |
+| table-pagination | :heavy_check_mark: |      |
+|   table-export   |                :x: |      |
+| table-expand-row |                :x: |      |
 
 ## Service
 
@@ -196,48 +197,41 @@ Legend
 |    file-upload    |                :x: | browse, drop, preview |
 |    data-schema    | :heavy_check_mark: |                       |
 |   data-dataset    |                :x: |                       |
-|   data-orm-crud   |                :x: |                       |
+|   data-orm-crud   | :heavy_check_mark: |                       |
 | data-orm-paginate | :heavy_check_mark: |                       |
 |  data-orm-search  |                :x: |                       |
 
 ## Entity
 
-|    Feature     | State |                                           Note |
-|:--------------:|------:|-----------------------------------------------:|
-|  data-entity   |   :x: | entity, value-object, id, dates, deleted-by-at |
-| data-reference |   :x: |                        reference (name, label) |
-|  data-history  |   :x: |                        version, history, event |
-|  data-domain   |   :x: |             UUID, join models by only one UUID |
+|    Feature     |              State |                                           Note |
+|:--------------:|-------------------:|-----------------------------------------------:|
+|  data-entity   | :heavy_check_mark: | entity, value-object, id, dates, deleted-by-at |
+| data-reference |                :x: |                        reference (name, label) |
+|  data-history  |                :x: |                        version, history, event |
+|  data-domain   |                :x: |             UUID, join models by only one UUID |
 
-## Workflow
+## Security
 
-|     Feature     | State | Note |
-|:---------------:|------:|-----:|
-| workflow-client |   :x: |      |
-| workflow-server |   :x: |      |
+|    Feature    | State |          Note |
+|:-------------:|------:|--------------:|
+|  auth-local   |   :x: |     HTML form |
+|  auth-openid  |   :x: |        OpenID |
+|    auth-ad    |   :x: |          SAML |
+|   secu-role   |   :x: |               |
+|  secu-right   |   :x: |               |
+|   secu-page   |   :x: |               |
+|  secu-routes  |   :x: |               |
+| user-settings |   :x: | local, remote |
+|  user-profil  |   :x: |        remote |
 
-## Form
+## Accessibility
 
-|     Feature     |              State | Note |
-|:---------------:|-------------------:|-----:|
-|  form-edition   | :heavy_check_mark: |      |
-|  form-toolbar   |                :x: |      |
-|  form-exemple   |                :x: |      |
-| form-validation |                :x: |      |
-|   date-picker   |                :x: |      |
-| data-validation |                :x: |  AJV |
-
-## Data-Table  
-
-|     Feature      |              State | Note |
-|:----------------:|-------------------:|-----:|
-|      table       | :heavy_check_mark: |      |
-|   table-modal    |                :x: |      |
-|    table-sort    |                :x: |      |
-| table-filtering  |                :x: |      |
-| table-pagination | :heavy_check_mark: |      |
-|   table-export   |                :x: |      |
-| table-expand-row |                :x: |      |
+|      Feature      |              State | Note |
+|:-----------------:|-------------------:|-----:|
+| access-breadcrumb | :heavy_check_mark: |      |
+|    access-size    | :heavy_check_mark: |   em |
+| access-wcag-aria  |                :x: |      |
+|  access-offline   |                :x: |      |
 
 ## Tests
 
@@ -249,6 +243,13 @@ Legend
 |   cucumber-edit   |   :x: |        NON-DEV |
 |  cucumber-build   |   :x: |                |
 | cucumber-refactor |   :x: |                |
+
+## Workflow
+
+|     Feature     | State | Note |
+|:---------------:|------:|-----:|
+| workflow-client |   :x: |      |
+| workflow-server |   :x: |      |
 
 ## Charts
 
