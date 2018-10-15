@@ -313,6 +313,7 @@ Legend
 * swagger express https://blog.cloudboost.io/adding-swagger-to-existing-node-js-project-92a6624b855b
 * swagger ts https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/swagger-ui-express/swagger-ui-express-tests.ts
 
+* datatable UI https://github.com/AllenFang/react-bootstrap-table
 * datatable UI https://allenfang.github.io/react-bootstrap-table/docs.html#
 * datatable UI https://react-bootstrap-table.github.io/react-bootstrap-table2/
 
