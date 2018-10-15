@@ -1,9 +1,11 @@
 import { faSave, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { JSONSchema6 } from 'json-schema';
+import * as _ from 'lodash';
 import * as React from 'react';
 import * as intl from 'react-intl-universal';
+import Form, { UiSchema } from 'react-jsonschema-form';
 import { Link } from 'react-router-dom';
-import { Form, FormGroup, Input, InputGroup, InputGroupAddon, Label } from 'reactstrap';
 import Button from 'reactstrap/lib/Button';
 
 import ProductAttributes from '../../../shared/api/ProductModel';
@@ -13,55 +15,24 @@ interface ProductFormProps {
   onSubmit: (data: ProductAttributes) => void;
 }
 
-class ProductForm extends React.Component<ProductFormProps, any> {
+class ProductForm extends React.Component<ProductFormProps, ProductAttributes> {
 
   constructor(props: ProductFormProps, state: any) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.data;
   }
 
   public render() {
     const productTypes = ["UNKNOWN", "FOOD", "WEAR", "TOY"];
+    const schema = this.schema(productTypes);
+    const uiSchema = this.uiSchema();
     return (
-      <Form className="p-4" onSubmit={this.handleSubmit}>
-
-        <input type="hidden" value={this.state.id} />
-
-        <FormGroup row>
-          <Label for="productName">{intl.get('product.form.fields.name.label')}</Label>
-          <Input
-            type="text" name="name" id="productName"
-            value={this.state.name}
-            onChange={this.setValue.bind(this, 'name')}
-            placeholder={intl.get('product.form.fields.name.placeholder')} />
-        </FormGroup>
-
-        <FormGroup row>
-          <Label for="productType">{intl.get('product.form.fields.type.label')}</Label>
-          <Input
-            type="select" name="type" id="productType"
-            value={this.state.type}
-            onChange={this.setValue.bind(this, 'type')} >
-            {productTypes.map(this.renderOption)}
-          </Input>
-        </FormGroup>
-
-        <FormGroup row>
-          <Label for="productPrice">{intl.get('product.form.fields.price.label')}</Label>
-          <InputGroup>
-            <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-            <Input
-              type="number" name="price" id="productPrice"
-              value={this.state.price}
-              onChange={this.setValue.bind(this, 'price')}
-              step="1"
-              placeholder={intl.get('product.form.fields.price.placeholder')} />
-            <InputGroupAddon addonType="append">.00</InputGroupAddon>
-          </InputGroup>
-        </FormGroup>
-
-        <div className="mt-5">
+      <Form
+        schema={schema}
+        uiSchema={uiSchema}
+        formData={this.state}
+        onSubmit={this.onSubmit()}>
+        <div className="mt-3">
           <Button color="primary" type="submit">
             <FontAwesomeIcon icon={faSave} fixedWidth /> {intl.get('form.submit')}
           </Button>{' '}
@@ -69,26 +40,73 @@ class ProductForm extends React.Component<ProductFormProps, any> {
             <FontAwesomeIcon icon={faUndo} fixedWidth /> {intl.get('form.cancel')}
           </Button>
         </div>
-
       </Form>
     );
   }
 
-  private setValue(field: any, event: any) {
-    const object = {};
-    object[field] = event.target.value;
-    this.setState(object);
+  private schema(productTypes: string[]) {
+    const schema = {
+      title: intl.get('product.form.title'),
+      type: "object",
+      required: ["name"],
+      properties: {
+        name: {
+          title: intl.get('product.form.fields.name.label'),
+          type: "string",
+          default: ""
+        },
+        type: {
+          title: intl.get('product.form.fields.type.label'),
+          type: "string",
+          default: productTypes[0],
+          enum: productTypes
+        },
+        price: {
+          title: intl.get('product.form.fields.price.label'),
+          type: "number",
+          default: null
+        }
+      }
+    } as JSONSchema6;
+    const existingProperties = {
+      createdAt: {
+        title: intl.get('product.form.fields.createdAt.label'),
+        type: "string",
+        format: "date-time"
+      },
+      updatedAt: {
+        title: intl.get('product.form.fields.updatedAt.label'),
+        type: "string",
+        format: "date-time"
+      },
+      archived: {
+        title: intl.get('product.form.fields.archived.label'),
+        type: "boolean",
+        default: false
+      }
+    } as JSONSchema6;
+    if (this.state.id) {
+      const properties = _.merge(schema.properties, existingProperties);
+      schema.properties = properties;
+    }
+    return schema;
   }
 
-  private renderOption(value: string) {
-    return (
-      <option key={value}>{value}</option>
-    );
+  private uiSchema() {
+    return {
+      name: {
+        "ui:placeholder": intl.get('product.form.fields.name.placeholder')
+      },
+      price: {
+        "ui:placeholder": intl.get('product.form.fields.price.placeholder')
+      }
+    } as UiSchema;
   }
 
-  private handleSubmit(event: any) {
-    event.preventDefault();
-    this.props.onSubmit(this.state);
+  private onSubmit() {
+    return (object: any) => {
+      this.props.onSubmit(object.formData);
+    }
   }
 
 }

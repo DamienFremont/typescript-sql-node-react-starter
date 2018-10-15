@@ -51,6 +51,9 @@
     "product.form.fields.type.label": "Type",
     "product.form.fields.price.label": "Price",
     "product.form.fields.price.placeholder": "ex: '123.45'",
+    "product.form.fields.createdAt.label": "Created At",
+    "product.form.fields.updatedAt.label": "Updated At",
+    "product.form.fields.archived.label": "Archived ?",
     "paginator.itemsPerPageLabel": "Items per page"
 
 }

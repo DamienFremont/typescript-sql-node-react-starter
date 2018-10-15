@@ -51,5 +51,8 @@
     "product.form.fields.type.label": "Type",
     "product.form.fields.price.label": "Prix",
     "product.form.fields.price.placeholder": "ex: '123.45'",
+    "product.form.fields.createdAt.label": "Date de création",
+    "product.form.fields.updatedAt.label": "Date de mise à jour",
+    "product.form.fields.archived.label": "Archivé ?",
     "paginator.itemsPerPageLabel": "Items par pages"
 }

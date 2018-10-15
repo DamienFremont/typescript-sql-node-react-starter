@@ -111,8 +111,6 @@ Legend
 
 ## Packaging
 
-![alt text](docs/README-feature-packaging.png)
-
 |     Feature      |              State |         Note |
 |:----------------:|-------------------:|-------------:|
 |    build-dev     | :heavy_check_mark: |              |
@@ -123,9 +121,9 @@ Legend
 |      banner      | :heavy_check_mark: |   banner.txt |
 |      logger      | :heavy_check_mark: | level in env |
 
-## App
+![alt text](docs/README-feature-packaging.png)
 
-![alt text](docs/README-feature-app.png)
+## App
 
 |         Feature         |              State |                       Note |
 |:-----------------------:|-------------------:|---------------------------:|
@@ -143,9 +141,9 @@ Legend
 |       layout-help       | :heavy_check_mark: |          general and pages |
 |       layout-urls       | :heavy_check_mark: |             SSR, CSR perfs |
 
-## API
+![alt text](docs/README-feature-app.png)
 
-![alt text](docs/README-feature-api.png)
+## API
 
 |      Feature       |              State |                  Note |
 |:------------------:|-------------------:|----------------------:|
@@ -155,20 +153,20 @@ Legend
 |    api-version     | :heavy_check_mark: |           version URL |
 | api-private-public | :heavy_check_mark: |                       |
 
-## Form
+![alt text](docs/README-feature-api.png)
 
-![alt text](docs/README-feature-form.png)
+## Form
 
 |     Feature     |              State | Note |
 |:---------------:|-------------------:|-----:|
 |  form-edition   | :heavy_check_mark: |      |
 |  form-toolbar   |                :x: |      |
-| form-validation |                :x: |  AJV |
-|   date-picker   |                :x: |      |
+| form-validation | :heavy_check_mark: |  AJV |
+|   date-picker   | :heavy_check_mark: |      |
+
+![alt text](docs/README-feature-form.png)
 
 ## Data-Table  
-
-![alt text](docs/README-feature-table.png)
 
 |     Feature      |              State | Note |
 |:----------------:|-------------------:|-----:|
@@ -178,6 +176,8 @@ Legend
 | table-pagination | :heavy_check_mark: |      |
 |   table-export   |                :x: |      |
 | table-expand-row |                :x: |      |
+
+![alt text](docs/README-feature-table.png)
 
 ## Service
 
@@ -224,15 +224,6 @@ Legend
 | user-settings |   :x: | local, remote |
 |  user-profil  |   :x: |        remote |
 
-## Accessibility
-
-|      Feature      |              State | Note |
-|:-----------------:|-------------------:|-----:|
-| access-breadcrumb | :heavy_check_mark: |      |
-|    access-size    | :heavy_check_mark: |   em |
-| access-wcag-aria  |                :x: |      |
-|  access-offline   |                :x: |      |
-
 ## Tests
 
 |      Feature      | State |           Note |
@@ -250,6 +241,15 @@ Legend
 |:---------------:|------:|-----:|
 | workflow-client |   :x: |      |
 | workflow-server |   :x: |      |
+
+## Accessibility
+
+|      Feature      |              State | Note |
+|:-----------------:|-------------------:|-----:|
+| access-breadcrumb | :heavy_check_mark: |      |
+|    access-size    | :heavy_check_mark: |   em |
+| access-wcag-aria  |                :x: |      |
+|  access-offline   |                :x: |      |
 
 ## Charts
 
@@ -315,3 +315,8 @@ Legend
 
 * datatable UI https://allenfang.github.io/react-bootstrap-table/docs.html#
 * datatable UI https://react-bootstrap-table.github.io/react-bootstrap-table2/
+
+* form generator from AJV https://github.com/mozilla-services/react-jsonschema-form
+* form generator from AJV https://mozilla-services.github.io/react-jsonschema-form/
+
+* utils LoadHash https://github.com/lodash/lodash
