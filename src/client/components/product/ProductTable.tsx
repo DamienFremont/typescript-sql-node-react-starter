@@ -5,6 +5,7 @@ import { BootstrapTable, FetchInfo, Options, RemoteObjSpec, TableHeaderColumn } 
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import "../../../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css";
 
 import { ProductItem } from '../../../shared/api/ProductModel';
 
@@ -30,13 +31,16 @@ class ProductTable extends React.Component<ProductTableProps, ProductTableState>
     }
 
     public render() {
+        const headerStyle =  { background: '#343a40', color: '#FFF' } ;
         return (
             <BootstrapTable
                 version="4"
                 data={this.props.datas}
+                headerStyle={headerStyle}
                 remote={this.remote}
                 fetchInfo={this.fetchInfo()}
                 pagination={true}
+                striped={true} hover={true}
                 options={this.options()}>
                 <TableHeaderColumn dataField='id' isKey>#</TableHeaderColumn>
                 <TableHeaderColumn dataField='name'>{intl.get('product.search.table.columns.name')}</TableHeaderColumn>
