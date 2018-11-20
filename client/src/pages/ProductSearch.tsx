@@ -4,9 +4,9 @@ import * as React from 'react';
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Badge, Breadcrumb, BreadcrumbItem, Button, Col, Container, Row } from 'reactstrap';
-import { FindAllResponse, ProductItem } from '../../../common/src/model/ProductModel';
-import ProductAPI from '../api/ProductAPI';
-import ProductTable from '../components/product/ProductTable';
+import ProductAPI from 'src/api/ProductAPI';
+import ProductTable from 'src/components/product/ProductTable';
+import { FindAllResponse, ProductItem } from 'src/model/ProductModel';
 
 interface ProductSearchState {
   datas: ProductItem[]

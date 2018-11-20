@@ -7,8 +7,7 @@ import * as intl from 'react-intl-universal';
 import Form, { UiSchema } from 'react-jsonschema-form';
 import { Link } from 'react-router-dom';
 import Button from 'reactstrap/lib/Button';
-
-import ProductAttributes from '../../../../common/src/model/ProductModel';
+import ProductAttributes from 'src/model/ProductModel';
 
 interface ProductFormProps {
   data: ProductAttributes;

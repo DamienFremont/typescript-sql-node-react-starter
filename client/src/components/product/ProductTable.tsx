@@ -5,9 +5,7 @@ import { BootstrapTable, FetchInfo, Options, RemoteObjSpec, TableHeaderColumn } 
 import * as intl from 'react-intl-universal';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import "../../../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css";
-
-import { ProductItem } from '../../../../common/src/model//ProductModel';
+import { ProductItem } from 'src/model/ProductModel';
 
 interface ProductTableProps {
     datas: ProductItem[];

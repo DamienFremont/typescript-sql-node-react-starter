@@ -5,10 +5,9 @@ import * as intl from 'react-intl-universal';
 import { Link, Redirect } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Col, Container, Row } from 'reactstrap';
 import Button from 'reactstrap/lib/Button';
-
-import ProductAttributes from '../../../common/src/model/ProductModel';
-import ProductAPI from '../api/ProductAPI';
-import ProductForm from '../components/product/ProductForm';
+import ProductAPI from 'src/api/ProductAPI';
+import ProductForm from 'src/components/product/ProductForm';
+import ProductAttributes from 'src/model/ProductModel';
 
 interface ProductCreateState {
   data: ProductAttributes;

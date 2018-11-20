@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-import ProductAttributes, { FindAllParams, FindAllResponse } from '../../../common/src/model/ProductModel';
+import ProductAttributes, { FindAllParams, FindAllResponse } from 'src/model/ProductModel';
 
 class ProductAPI {
 

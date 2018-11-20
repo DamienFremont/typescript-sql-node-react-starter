@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import HelloResponse from '../../../common/src/model/HelloModel';
+import HelloResponse from '../../../client/src/model/HelloModel';
 
 export function helloApi(): Router {
     const api = Router();

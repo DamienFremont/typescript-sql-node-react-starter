@@ -1,6 +1,6 @@
 import * as Sequelize from "sequelize";
-import productFactory from "./Product";
-const configJson = require('./../../../../config/config.json');
+import productFactory from "./Products";
+const configJson = require('../../../../config/config.json');
 
 const env = process.env.NODE_ENV || "development";
 const config = configJson[env];

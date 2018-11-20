@@ -20,10 +20,9 @@ logger.logBanner('config/banner.txt', process.env.REACT_APP_VERSION);
 logger.logEnv();
 
 (async () => {
-
   // database
   await db.sequelize.sync({ force: true });
-
+  // mock
   for (let index = 1; index < 40; index++) {
     db.Product.create({
       id: index.toString(),
@@ -32,7 +31,6 @@ logger.logEnv();
       price: (42 + index)
     });
   }
-
 
   // express
   const server = http.createServer(App);
