@@ -1,5 +1,5 @@
 import * as Sequelize from "sequelize";
-import ProductAttributes from "../../../client/src/model/product/ProductModel";
+import ProductAttributes from "../../../client/src/model/ProductModel";
 
 type ProductInstance = Sequelize.Instance<ProductAttributes> & ProductAttributes;
 
